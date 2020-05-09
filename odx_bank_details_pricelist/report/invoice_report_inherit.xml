@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="invoice_report_bank_details" inherit_id="account.report_invoice_document">
+        <xpath expr="//t/t/div/p[@name='note']" position="after">
+            <strong t-if="o.pricelist">Bank Details:</strong>
+            <p  t-if="o.pricelist" t-esc="o.pricelist.bank_details"/>
+        </xpath>
+    </template>
+</odoo>

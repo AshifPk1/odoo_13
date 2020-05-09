@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="task_ticket_wizard_view_form" model="ir.ui.view">
+        <field name="name">task.ticket.wizard.view.form</field>
+        <field name="model">task.ticket.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="ticket_task" widget="radio" required="1"/>
+                </group>
+                <group>
+                    <field name="attachment_id" invisible="1"/>
+                    <field name="sign_template_id" invisible="1"/>
+
+                    <field name="task_id" attrs="{'required': [('ticket_task', '=', 'task')],'invisible': [('ticket_task', '!=', 'task')]}"/>
+                    <field name="ticket_id" attrs="{'required': [('ticket_task', '=', 'ticket')], 'invisible': [('ticket_task', '!=', 'ticket')]}"/>
+                </group>
+                <footer>
+                    <button string="Confirm" name="confirm" type="object" class="btn-primary"/>
+                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_task_tiket" model="ir.actions.act_window">
+        <field name="name">Task/Ticket</field>
+        <field name="res_model">task.ticket.wizard</field>
+        <field name="target">new</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'default_sign_template_id': active_id}</field>
+    </record>
+</odoo>

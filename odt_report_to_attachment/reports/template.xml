@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="Print_helpdesk_ticket">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <br/>
+                            <br/>
+                            <table class="table table-sm table-bordered">
+                                <tr>
+                                    <th>Date</th>
+                                    <td></td>
+                                    <th>التاريخ</th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        TASK NO /TICKET NO
+                                    </th>
+                                    <td>
+                                        <span t-field="o.ticket_number_val"/>
+                                    </td>
+                                    <th>رقم (المھمة / تذكرة الخدمة)</th>
+                                </tr>
+                                <tr>
+                                    <th>Client Name</th>
+                                    <td>
+                                        <span t-field="o.partner_id"/>
+                                    </td>
+                                    <th>إسم العمیل</th>
+                                </tr>
+                                <tr>
+                                    <th>Time In</th>
+                                    <td></td>
+                                    <th>وقت الدخول</th>
+                                </tr>
+                                <tr>
+                                    <th>Time Out</th>
+                                    <td></td>
+                                    <th>وقت الخروج</th>
+                                </tr>
+                            </table>
+                            <table class="table table-sm table-bordered">
+                                <tr>
+                                    <th class="text-center" colspan="4">Service Type</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center" colspan="2">Plan</th>
+                                    <th class="text-center" colspan="2">Test/Train</th>
+                                </tr>
+                                <tr>
+                                    <td>Project Plan (Schedule / Team)</td>
+                                    <td>
+                                        <t t-if="o.is_project_plan">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.is_test">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>Test (Functional and Customization)</td>
+                                </tr>
+                                <tr>
+                                    <td>Portal Access Training</td>
+                                    <td>
+                                        <t t-if="o.is_portal_acces_trainig">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.is_opppenig_balance_method">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>Opening Balance Method</td>
+                                </tr>
+                                <tr>
+                                    <td>Data Template</td>
+                                    <td>
+                                        <t t-if="o.is_data_template">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.is_end_user_trainig">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>End User Training</td>
+                                </tr>
+                                <tr>
+                                    <td>Kick off Meeting</td>
+                                    <td>
+                                        <t t-if="o.is_kick_of_meeting">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.is_indoor_skydiving">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>Indoor Skydiving</td>
+                                </tr>
+                                <tr>
+                                    <td>Installation</td>
+                                    <td>
+                                        <t t-if="o.is_installtion">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.is_cut_of_plan">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>Cut off Plan</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center" colspan="2">Organize</th>
+                                    <th class="text-center" colspan="2">Other</th>
+                                </tr>
+                                <tr>
+                                    <td>Key User Interview</td>
+                                    <td>
+                                        <t t-if="o.is_key_user_interview">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.is_support">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>Support</td>
+                                </tr>
+                                <tr>
+                                    <td>PDD / CDD Review / Approval</td>
+                                    <td>
+                                        <t t-if="o.is_pdd_approval">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <t t-if="o.is_meeting_visit">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>Meeting / Visit</td>
+                                </tr>
+                                <tr>
+                                    <td>Meeting</td>
+                                    <td>
+                                        <t t-if="o.is_meeting">
+                                            <input type="checkbox" id="checkbox_white_status" checked="checked"/>
+                                        </t>
+                                        <t t-else=" ">
+                                            <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                        </t>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th>Details of Work / وصفالعمل</th>
+                                </tr>
+                                <td>
+                                    <span t-field="o.details_of_work"/>
+                                </td>
+                            </table>
+                            <br/>
+                            <table width="100%">
+                                <tr>
+                                    <center>
+                                        <th class="text-center" colspan="3">OdooTec Team</th>
+                                    </center>
+                                    <th></th>
+                                    <center>
+                                        <th class="text-center" colspan="3">Client Team</th>
+                                    </center>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <table width="100%">
+                                <tr>
+                                    <th>Name / Title</th>
+                                    <th></th>
+                                    <th>Signature
+
+                                    </th>
+                                    <th></th>
+                                    <th>Name / Title</th>
+                                    <th></th>
+                                    <th>Signature</th>
+                                </tr>
+                                <tr>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="o.user_id"/>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <t t-if="o.user_id">
+                                            <img t-att-src="image_data_uri(o.user_id.digital_signature)"
+                                                 style="max-height: 4cm; max-width: 8cm;"/>
+                                        </t>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="o.partner_id"/>
+                                    </td>
+                                    <td colspan="2"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id="helpdesk_ticket_form_inherit_print" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.form.inherit</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='assign_ticket_to_self']" position="after">
+                    <button name="generate_attachment" string="Generate Attachment" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//form/sheet" position="inside">
+                    <notebook>
+                        <page name="sdr" string="SDR">
+                            <group string="Service Type">
+                                <group string="Plan">
+                                    <field name="is_project_plan" widget="boolean"/>
+                                    <field name="is_portal_acces_trainig" widget="boolean"/>
+                                    <field name="is_data_template" widget="boolean"/>
+                                    <field name="is_kick_of_meeting"/>
+                                    <field name="is_installtion"/>
+                                </group>
+                                <group string="Test/Train">
+                                    <field name="is_test"/>
+                                    <field name="is_opppenig_balance_method"/>
+                                    <field name="is_end_user_trainig"/>
+                                    <field name="is_indoor_skydiving"/>
+                                    <field name="is_cut_of_plan"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Organize">
+                                    <field name="is_key_user_interview"/>
+                                    <field name="is_pdd_approval"/>
+                                    <field name="is_meeting"/>
+                                </group>
+                                <group string="Other">
+                                    <field name="is_support"/>
+                                    <field name="is_meeting_visit"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="details_of_work"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

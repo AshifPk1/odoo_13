@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="helpdesk_ticket_report"
+            string="Print Ticket"
+            model="helpdesk.ticket"
+            report_type="qweb-pdf"
+            name="odt_report_to_attachment.Print_helpdesk_ticket"
+            file="odt_report_to_attachment.Print_helpdesk_ticket"
+    />
+</odoo>
