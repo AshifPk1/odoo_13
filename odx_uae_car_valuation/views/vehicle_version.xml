@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vehicle_version_tree_view">
+            <field name="name">vehicle.version.tree</field>
+            <field name="model">vehicle.version</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="model_id"/>
+                    <field name="make_id"/>
+                    <field name="version"/>
+                    <field name="version_type_id"/>
+                    <field name="no_of_cylinder"/>
+                    <field name="no_of_doors"/>
+                    <field name="no_of_seats"/>
+                    <field name="version_category"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="vehicle_version_form_view">
+            <field name="name">vehicle.version.form</field>
+            <field name="model">vehicle.version</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="model_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="model_id"/>
+                            </h1>
+                            <label for="make_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="make_id"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="version"/>
+                                <field name="version_type_id"/>
+                                <field name="no_of_cylinder"/>
+                            </group>
+                            <group>
+                                <field name="no_of_doors"/>
+                                <field name="no_of_seats"/>
+                                <field name="version_category"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_vehicle_version">
+            <field name="name">Version</field>
+            <field name="res_model">vehicle.version</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first item
+                </p>
+            </field>
+        </record>
+        <menuitem name="Version" id="menu_vehicle_version" action="action_vehicle_version" parent="uae_vehicles"/>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+

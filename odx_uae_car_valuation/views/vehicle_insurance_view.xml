@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="vehicle_insurance_tree_view">
+            <field name="name">vehicle_insurance_tree</field>
+            <field name="model">vehicle.insurance</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="insurance_form_view">
+            <field name="name">insurance.form</field>
+            <field name="model">vehicle.insurance</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                      <group>
+                          <field name="name"/>
+                      </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       <record model="ir.actions.act_window" id="vehicle_insurance_action">
+                <field name="name">Vehicle Insurance</field>
+                <field name="res_model">vehicle.insurance</field>
+                <field name="view_mode">tree,form</field>
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">Create the first insurance
+                    </p>
+                </field>
+       </record>
+        <menuitem name="Insurance Companies" id="menu_insurance_companies" action="vehicle_insurance_action" parent="uae_vehicles"/>
+    </data>
+</odoo>

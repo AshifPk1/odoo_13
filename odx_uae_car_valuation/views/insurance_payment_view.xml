@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="insurance_payment_tree_view">
+            <field name="name">insurance_payment_tree</field>
+            <field name="model">insurance.payment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="insurance_company_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="insurance_payment_form_view">
+            <field name="name">payment.form</field>
+            <field name="model">insurance.payment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                         <button name="confirm" string="confirm" type="object" states="draft"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="insurance_company_id" attrs="{'readonly':[('state','=','confirmed')]}"/>
+                                <field name="insurance_type" attrs="{'readonly':[('state','=','confirmed')]}"/>
+                            </group>
+                            <group>
+                                <field name="date" attrs="{'readonly':[('state','=','confirmed')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="tariff" string="TARIFF">
+                                <field name="tariff_ids" attrs="{'readonly':[('state','=','confirmed')]}">
+                                    <tree>
+                                        <field name="type_of_vehicle_id"/>
+                                         <field name="ownership"/>
+                                        <field name="attribute_value_id"/>
+                                        <field name="value"/>
+                                        <field name="premium" sum="Premium "/>
+                                        <field name="agency_repair" sum="Agency Repair"/>
+                                        <field name="non_agency_repair" sum="Non Agency Repair"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="type_of_vehicle_id"/>
+                                                <field name="ownership"/>
+                                                <field name="attribute_value_id"/>
+                                                <field name="value"/>
+                                            </group>
+                                            <group>
+                                                <field name="premium"/>
+                                                <field name="agency_repair"/>
+                                                <field name="non_agency_repair"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       <record model="ir.actions.act_window" id="insurance_payment_action">
+                <field name="name">Insurance Payment</field>
+                <field name="res_model">insurance.payment</field>
+                <field name="view_mode">tree,form</field>
+                <field name="help" type="html">
+                    <p class="o_view_nocontent_smiling_face">Create the first insurance
+                    </p>
+                </field>
+       </record>
+        <menuitem name="Insurance Payment" id="menu_insurance_payment" action="insurance_payment_action" parent="uae_vehicles"/>
+    </data>
+</odoo>

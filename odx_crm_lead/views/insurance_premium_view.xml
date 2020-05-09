@@ -1,0 +1,162 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="insurance_premium_tree_view">
+            <field name="name">insurance.premium.tree</field>
+            <field name="model">insurance.premium</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="insurance_company_id"/>
+                    <field name="insurence_category"/>
+                    <field name="insurance_premium"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="insurance_premium_form_view">
+            <field name="name">insurance.premium.form</field>
+            <field name="model">insurance.premium</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="insurance_company_id"/>
+                                <field name="insurence_category"/>
+                                <field name="brokarage"/>
+                            </group>
+                            <group>
+                                <field name="vehicle_type"
+                                       attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                                <field name="insurance_premium"/>
+                                <field name="premium_product"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}">
+                            <group>
+                                <field name="repaire_rates"/>
+                                <field name="driver_age"/>
+                                <field name="date_of_first_registration"/>
+                            </group>
+                            <group>
+                                <field name="car_value"/>
+                                <field name="excess"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="no_of_cylinder"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'saloon'),('vehicle_type', '!=', '4_4'),('vehicle_type', '!=', 'van')]}"/>
+                                <field name="private_commercial"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'saloon'),('vehicle_type', '!=', '4_4'),('vehicle_type', '!=', 'equipments')]}"/>
+                                <field name="weight"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'p_up')]}"/>
+                                <field name="engin"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'motor_cycle')]}"/>
+                                <field name="gallons"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'trailer_watertanker')]}"/>
+                                <field name="water_tanker"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'trailer_watertanker')]}"/>
+                                <field name="tariler"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'trailer_watertanker')]}"/>
+                                <field name="water_tanker_trailer"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'trailer_watertanker')]}"/>
+                                <field name="light_equipments"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'equipments')]}"/>
+                                <field name="heavy"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'equipments')]}"/>
+                                <field name="no_of_passengers"
+                                       attrs="{'invisible': [('vehicle_type', '!=', 'bus')]}"/>
+                                <field name="package_name"
+                                       attrs="{'invisible': [('insurence_category', '!=', 'family_medical')]}"/>
+                                <field name="network"
+                                       attrs="{'invisible': [('insurence_category', '!=', 'family_medical')]}"/>
+                            </group>
+                            <group>
+                                <field name="premium"/>
+                            </group>
+                            <group>
+                                <field name="tax_id"/>
+                                <field name="tax_amount" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="total"/>
+                            </group>
+                        </group>
+                        <group name="car_benefits" string="Car Benefits"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}">
+                            <group>
+                                <field name="loss_dammage"/>
+                                <field name="repaire_type"/>
+                                <field name="third_party_liability"/>
+                                <field name="blood_money"/>
+                                <field name="fire_theft"/>
+                                <field name="storm_flood"/>
+                                <field name="natural_perils"/>
+                                <field name="riot_strike"/>
+                                <field name="emergency_medical_expenses"/>
+                                <field name="personal_belongigs"/>
+                                <field name="period_of_13_months"/>
+                                <field name="emergency_road_assistance"/>
+                                <field name="geographical_area_extension"/>
+                                <field name="guranteed_repairs"/>
+                                <field name="excess_for_windscreen"/>
+                            </group>
+                            <group>
+                                <field name="oman_cover"/>
+                                <field name="p_off_road"/>
+                                <field name="road_side_assistance"/>
+                                <field name="ambulance_cover"/>
+                                <field name="aed_500"/>
+                                <field name="aed_3500"/>
+                                <field name="optional_cover"/>
+                                <field name="driver_cover"/>
+                                <field name="passanger_cover"/>
+                                <field name="rent_a_car" placeholder="No of days"/>
+                                <field name="geographical_area"/>
+                                <field name="replacement_vehcle"/>
+                                <field name="assist_america_for_individual"/>
+                                <field name="accident_break_down"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="members" attrs="{'invisible': [('insurence_category', '!=', 'family_medical')]}"
+                                  string="Members">
+                                <field name="additional_members_ids">
+                                    <tree  editable="bottom">
+                                        <field name="name"/>
+                                        <field name="Date_of_birth"/>
+                                        <field name="gender"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_insurance_premium">
+            <field name="name">Insurance Policy</field>
+            <field name="res_model">insurance.premium</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first item
+                </p>
+            </field>
+        </record>
+        <menuitem name="Insurance Policy" id="menu_insurance_premium" action="action_insurance_premium"
+                  parent="odx_uae_car_valuation.uae_vehicles"/>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="product_normal_form_view_inherit" model="ir.ui.view">
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/div/div[@name='options']" position="inside">
+                    <div>
+                        <field name="is_premium"/>
+                        <label for="is_premium"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="premium_type" attrs="{'required': [('is_premium', '=', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="send_premium_table" string="Send Premium Table" type="object" attrs="{'invisible': [('state', 'not in', ('draft', 'sent'))]}" class="btn-primary"/>
+                </xpath>
+                <xpath expr="//form/sheet/group" position="after">
+                    <group string="Insurance Details">
+                        <group>
+                            <field name="visible_insurance_company" invisible="1"/>
+                            <field name="insurence_category"/>
+                             <field name="vehicle_id"
+                                   attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        </group>
+                        <group>
+                            <field name="business_insurance_type"
+                                   attrs="{'invisible': [('insurence_category', '!=', 'business')]}"/>
+                            <field name="vehicle_type"
+                                   attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+
+                        </group>
+                    </group>
+                    <center>
+                        <label for="insurance_premium_table_ids" string="Insurance Policy"
+                               attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    </center>
+                    <field name="insurance_premium_table_ids"
+                           attrs="{'invisible': [('state', 'not in', ('draft', 'sent'))]}">
+                        <tree editable="bottom">
+                            <field name="insurance_company_id"></field>
+                            <field name="insurance_premium_id"></field>
+                            <field name="tax_amount" invisible="1"></field>
+                            <field name="amount"></field>
+                            <field name="tax_id"></field>
+                            <field name="total_amount"></field>
+                            <field name="brokarage"></field>
+                            <button name="confirm_premium" string="Confirm Premium" type="object" class="btn-primary"/>
+                        </tree>
+                    </field>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_uom_qty']"
+                       position="after">
+                    <field name="premium"/>
+                    <field name="commission"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[@name='order_lines']/field[@name='order_line']/form//field[@name='product_id']"
+                       position="after">
+                    <field name="premium"/>
+                    <field name="commission"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='price_unit']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_invoice_id']"
+                       position="attributes">
+                    <attribute name="groups"></attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_invoice_id']"
+                       position="attributes">
+                    <attribute name="string">Insurance Company</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_invoice_id']"
+                       position="attributes">
+                    <attribute name="domain">[('is_insurance_comapny', '=', True)]</attribute>
+                    <attribute name="attrs">{'invisible': [('visible_insurance_company', '=', False)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

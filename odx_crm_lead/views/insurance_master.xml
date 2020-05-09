@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_insurance_company" model="ir.actions.act_window">
+            <field name="name">Insurance Company</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_is_insurance_comapny':True}</field>
+            <field name="domain">[('is_insurance_comapny', '=', True)]</field>
+        </record>
+        <record id="action_insurance_broker" model="ir.actions.act_window">
+            <field name="name">Insurance Broker</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_is_insurance_broker':True}</field>
+            <field name="domain">[('is_insurance_broker', '=', True)]</field>
+        </record>
+        <menuitem name="Insurance Companies" id="menu_insurance_companies" action="action_insurance_company"
+                  parent="odx_uae_car_valuation.uae_vehicles"/>
+        <menuitem name="Insurance Broker" id="menu_insurance_broker" action="action_insurance_broker"
+                  parent="odx_uae_car_valuation.uae_vehicles"/>
+    </data>
+</odoo>

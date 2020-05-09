@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <report
+            id="print_premium_table"
+            model="sale.order"
+            string="Premium Table"
+            report_type="qweb-pdf"
+            name="odx_crm_lead.premium_table_template"
+            file="odx_crm_lead.premium_table_template"
+            attachment_use="False"
+            menu="True"
+        />
+    </data>
+</odoo>

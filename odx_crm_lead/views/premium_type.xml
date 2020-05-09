@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="premium_type_tree_view">
+            <field name="name">premium_type_tree</field>
+            <field name="model">premium.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="premium_type_form_view">
+            <field name="name">premium.type.form</field>
+            <field name="model">premium.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="premium_type_action">
+            <field name="name">Premium Type</field>
+            <field name="res_model">premium.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first insurance
+                </p>
+            </field>
+        </record>
+        <menuitem name="Premium Type" id="menu_premium_type" action="premium_type_action"
+                  parent="odx_uae_car_valuation.uae_vehicles"/>
+    </data>
+</odoo>

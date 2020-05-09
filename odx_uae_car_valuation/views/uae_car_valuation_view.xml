@@ -1,0 +1,89 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="uae_car_valuation_tree_view">
+            <field name="name">uae.car.valuation.tree</field>
+            <field name="model">uae.car.valuation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="make_id"/>
+                    <field name="model_id"/>
+                    <field name="version_id"/>
+                    <field name="year"/>
+                    <field name="estimated_price_new_min"/>
+                    <field name="estimated_price_new_max"/>
+                    <field name="estimated_price_old_min"/>
+                    <field name="estimated_price_old_max"/>
+                    <field name="version_type_id"/>
+                    <field name="no_of_cylinder"/>
+                    <field name="no_of_doors"/>
+                    <field name="no_of_seats"/>
+                    <field name="version_category"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="uae_car_valuation_form_view">
+            <field name="name">uae.car.valuation.form</field>
+            <field name="model">uae.car.valuation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="make_id" class="oe_edit_only"/>
+                            <h1>
+                                <field name="make_id"/>
+                            </h1>
+                            <label for="model_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="model_id" class="oe_inline"/>
+
+                            </h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="version_id"/>
+                            </group>
+                            <group>
+                                <field name="year"/>
+                            </group>
+                            <group>
+                                <field name="estimated_price_new_max"/>
+                                <field name="estimated_price_new_min"/>
+                                <field name="version_type_id"/>
+                                <field name="no_of_cylinder"/>
+                                <field name="no_of_doors"/>
+                            </group>
+                            <group>
+                                <field name="estimated_price_old_max"/>
+                                <field name="estimated_price_old_min"/>
+                                <field name="no_of_seats"/>
+                                <field name="version_category"/>
+                                <field name="vehicle_type"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_uae_car_valuation">
+            <field name="name">UAE Car Valuation</field>
+            <field name="res_model">uae.car.valuation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first item
+                </p>
+            </field>
+        </record>
+        <menuitem name="Master Data" parent="crm.crm_menu_root" id="uae_vehicles" sequence="19"/>
+        <menuitem name="Vehicles" id="menu_uae_car_valuation" action="action_uae_car_valuation" parent="uae_vehicles"/>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+

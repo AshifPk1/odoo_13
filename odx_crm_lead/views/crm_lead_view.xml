@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="crm_lead_view_form_inherit">
+        <field name="name">crm.lead.view.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                <label for="insurence_category" class="oe_edit_only"/>
+                <h3>
+                    <field name="insurence_category"/>
+                </h3>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="first_name"/>
+                <field name="last_name"/>
+            </xpath>
+            <xpath expr="//form/sheet/group" position="inside">
+                <group>
+                    <field name="Date_of_birth"/>
+                    <field name="premium"/>
+                </group>
+                <group>
+                    <field name="date"/>
+                    <field name="country_id"/>
+                    <field name="gender"/>
+                </group>
+            </xpath>
+            <xpath expr="//form/sheet/group" position="after">
+                <group name="insurance"
+                       string="Insurance">
+                    <group>
+                        <field name="insured_name"/>
+                        <field name="insurance_type"/>
+                        <field name="vehicle_id"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="make_id" attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="model_id"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="version_id"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="year" attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="brand_new"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="registered_location"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="driving_experience"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance'),('insurence_category', '!=', 'bike_insurance')]}"/>
+                        <field name="claim_status"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <!--                        family_medical-->
+                        <field name="visa_emirates_id"
+                               attrs="{'invisible': [('insurence_category', '!=', 'family_medical'),('insurence_category', '!=', 'bike_insurance'),('insurence_category', '!=', 'group_medical'),('insurence_category', '!=', 'yacht_insurance')]}"/>
+                        <field name="salary" attrs="{'invisible': [('insurence_category', '!=', 'family_medical')]}"/>
+                        <!--                        group_medical-->
+                        <field name="number_of_employees"
+                               attrs="{'invisible': [('insurence_category', '!=', 'group_medical')]}"/>
+                        <field name="business_name"
+                               attrs="{'invisible': [('insurence_category', '!=', 'group_medical'),('insurence_category', '!=', 'business')]}"/>
+                        <!--                        business-->
+                        <field name="business_insurance_type"
+                               attrs="{'invisible': [('insurence_category', '!=', 'business')]}"/>
+                        <!--                        travel-->
+                        <field name="travel_type" attrs="{'invisible': [('insurence_category', '!=', 'travel')]}"/>
+                        <field name="Travelling_to" attrs="{'invisible': [('insurence_category', '!=', 'travel')]}"/>
+                        <field name="travelling_with" attrs="{'invisible': [('insurence_category', '!=', 'travel')]}"/>
+                        <!--                        yacht_insurance-->
+                        <field name="boat_details"
+                               attrs="{'invisible': [('insurence_category', '!=', 'yacht_insurance')]}"/>
+                        <!--                        home_insurance-->
+                        <field name="home_status"
+                               attrs="{'invisible': [('insurence_category', '!=', 'home_insurance')]}"/>
+                        <field name="value_of_home_contents"
+                               attrs="{'invisible': [('insurence_category', '!=', 'home_insurance')]}"/>
+                    </group>
+                    <group>
+                        <field name="insurance_expiry_date"/>
+                        <field name="currently_insured"/>
+                        <field name="years_of_no_claim_certificate"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="current_repair_type"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="specification"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <field name="suage_of_the_vehicle"
+                               attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}"/>
+                        <!--                        family_medical-->
+                        <field name="details_of_existing_policy"
+                               attrs="{'invisible': [('insurence_category', '!=', 'family_medical')]}"/>
+                        <!--                        group_medical-->
+                        <field name="insurance_company_id"
+                               attrs="{'invisible': [('insurence_category', '!=', 'group_medical')]}"/>
+                        <!--                        travel-->
+                        <field name="travelling_date_from"
+                               attrs="{'invisible': [('insurence_category', '!=', 'travel')]}"/>
+                        <field name="travelling_date" attrs="{'invisible': [('insurence_category', '!=', 'travel')]}"/>
+                        <!--                        bike_insurance-->
+                        <field name="details_of_bike"
+                               attrs="{'invisible': [('insurence_category', '!=', 'bike_insurance')]}"/>
+                        <!--                        yacht_insurance-->
+                        <field name="engine_details"
+                               attrs="{'invisible': [('insurence_category', '!=', 'yacht_insurance')]}"/>
+                        <!--                        home_insurance-->
+                        <field name="value_of_personal_belongings"
+                               attrs="{'invisible': [('home_status', '!=', 'own')]}"/>
+                        <field name="value_of_buildings"
+                               attrs="{'invisible': [('insurence_category', '!=', 'home_insurance')]}"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//notebook/page[@name='extra']//field[@name='source_id']" position="replace">
+            </xpath>
+            <xpath expr="//form/sheet/group/group[7]" position="attributes">
+                <attribute name="attrs">{}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='lost_reason']" position="attributes">
+                <attribute name="attrs">{}</attribute>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Attachment" name="attachment">
+                    <group attrs="{'invisible': [('insurence_category', '!=', 'motor_insurance')]}" string="Documents">
+                        <group>
+                            <label for="mulika_front" string="Mulika"/>
+                            <div>
+                                <field name="mulika_front" widget='attachment' class="oe_inline"
+                                       style="margin-right:10px;"/>
+                                <field name="mulika_back" widget='attachment' class="oe_inline"/>
+                            </div>
+                            <label for="driving_license_front" string="Driving License"/>
+                            <div>
+                                <field name="driving_license_front" widget='attachment' class="oe_inline"
+                                       style="margin-right:10px;"/>
+                                <field name="driving_license_back" widget='attachment' class="oe_inline"/>
+                            </div>
+                            <label for="emirates_id_front" string="Emirates"/>
+                            <div>
+                                <field name="emirates_id_front" widget="attachment" class="oe_inline"
+                                       style="margin-right:10px;"/>
+                                <field name="emirates_id_back" widget="attachment" class="oe_inline"/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="pass_certificate" widget='attachment'/>
+                            <field name="trade_license" widget='attachment'/>
+                        </group>
+                    </group>
+                    <group attrs="{'invisible': [('insurence_category', '!=', 'family_medical')]}" string="Documents">
+                        <group>
+                            <label for="passport_copy_front" string="Passport"/>
+                            <div>
+                                <field name="passport_copy_front" widget='attachment' class="oe_inline"
+                                       style="margin-right:10px;"/>
+                                <field name="passport_copy_back" widget='attachment' class="oe_inline"/>
+                            </div>
+                            <field name="visa_copies" widget="attachment"/>
+                        </group>
+                        <group>
+                            <label for="emirates_id_family_front" string="Emirates"/>
+                            <div>
+                                <field name="emirates_id_family_front" widget="attachment" class="oe_inline"
+                                       style="margin-right:10px;"/>
+                                <field name="emirates_id_family_back" widget="attachment" class="oe_inline"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group attrs="{'invisible': [('insurence_category', '!=', 'group_medical')]}" string="Documents">
+                        <group>
+                            <field name="census_list" widget="attachment"/>
+                            <field name="existing_tob" widget="attachment"/>
+                        </group>
+                        <group>
+                            <field name="trade_license_medical" widget="attachment" string="Trade License"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Additional Members" name="additional_members"
+                      attrs="{'invisible': [('insurence_category', '!=', 'family_medical')]}">
+                    <field name="additional_members_ids">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="relationship"/>
+                            <field name="gender"/>
+                            <field name="marriage_status"/>
+                            <field name="Date_of_birth"/>
+                            <field name="salary"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="crm_lead_view_tree_inherit">
+        <field name="name">crm.lead.view.tree.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email_from']" position="after">
+                <field name="mobile" optional="show"/>
+                <field name="premium" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='create_date']" position="replace">
+                <field name="date" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="insurence_category" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='city']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='country_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='team_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tag_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email_from']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="groups">base.group_erp_manager</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

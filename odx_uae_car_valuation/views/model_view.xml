@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="model_tree_view">
+            <field name="name">model.tree</field>
+            <field name="model">vehicle.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="make_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="model_form_view">
+            <field name="name">model.form</field>
+            <field name="model">vehicle.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <label for="make_id" class="oe_edit_only"/>
+                            <h2>
+                                <field name="make_id"/>
+                            </h2>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_model">
+            <field name="name">Model</field>
+            <field name="res_model">vehicle.model</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first item
+                </p>
+            </field>
+        </record>
+        <menuitem name="Model" id="menu_model" action="action_model" parent="uae_vehicles"/>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+

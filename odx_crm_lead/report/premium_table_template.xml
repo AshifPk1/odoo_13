@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="premium_table_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <br/>
+                            <table width="100%">
+                                <tr>
+                                    <th>Customer:</th>
+                                    <th>Insurance Category:</th>
+                                    <th>Date :</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="o.partner_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.insurence_category"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.date_order"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <center>
+                                <strong class="text-center">INSURANCE POLICY</strong>
+                            </center>
+                            <br/>
+                            <table t-if="o.insurence_category == 'motor_insurance'" width="100%" height="100"
+                                   class="table-bordered mt32">
+                                <tr>
+                                    <th style="color: #00ad26;">Comparison Of Car Insurance Quote</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <th>
+                                            <span style="color: #4fc9e2;" t-if="insurance"
+                                                  t-field="insurance.insurance_company_id"/>
+                                        </th>
+                                    </t>
+                                </tr>
+                                <tr style="border: 1px solid black; background-color:#98FB98;">
+                                    <th style="color: #1c2dab;">EXACT VEHICLE AND VALUE</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span style="color: #1c2dab;" t-field="o.vehicle_id"/>
+                                            <br/>
+                                            <span style="color: #1c2dab;" t-if="o.vehicle_id"
+                                                  t-field="o.vehicle_id.estimated_price_new_max"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                    </t>
+
+                                </tr>
+                                <tr style="border: 1px solid black; background-color:#60a8c4;">
+                                    <th style="color: #1c2dab;">BENEFITS</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Loss or Damage to the insured vehicle</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.loss_dammage">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+                                                    <!--                                                    <input type="checkbox" id="checkbox_white_status"-->
+                                                    <!--                                                           checked="checked"/>-->
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+
+                                </tr>
+                                <tr>
+                                    <th>Third Party Property Liability</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-field="o.vehicle_type"/>
+                                            <br/>
+                                            <span style="color: #4fc9e2;" t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.third_party_liability"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Blood Money</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.blood_money">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Fire and Theft Cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.fire_theft">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Storm,Flood</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.storm_flood">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Natural Perils</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.natural_perils">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Riot and Strike</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.riot_strike">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Repairs</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span style="color: #4fc9e2;" t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.repaire_type"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Emergency medical expenses</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.emergency_medical_expenses">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Rent A Car</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span style="color: #4fc9e2;" t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.rent_a_car"/>
+                                            <span style="color: #4fc9e2;">Days</span>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Personal Belongings</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.personal_belongigs">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Oman cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span style="color: #4fc9e2;" t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.oman_cover"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Off road Cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.p_off_road">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Road Side Assistance</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.road_side_assistance">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Guaranteed Repairs</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.guranteed_repairs">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>24 Hour Accident and Breakdown Recovery</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.accident_break_down">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Driver Cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.driver_cover">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Driver Cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.passanger_cover">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Ambulance Cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.ambulance_cover">
+                                                    <img t-att-src="'/odx_crm_lead/static/src/tik.png'"
+                                                         style="width:40px;height:10px"/>
+
+                                                </t>
+                                                <!--                                                <t t-else=" ">-->
+                                                <!--                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>-->
+                                                <!--                                                </t>-->
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Excess for windscreen damage</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.excess_for_windscreen"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr></tr>
+                                <tr style="border: 1px solid black; background-color:#87ceeb;">
+                                    <th style="color: #1c2dab;">Premium</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-if="insurance" t-field="insurance.amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr style="border: 1px solid black; background-color:#87ceeb;">
+                                    <th style="color: #1c2dab;">TAX Amount</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-if="insurance" t-field="insurance.tax_amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr style="border: 1px solid black; background-color:#87ceeb;">
+                                    <th style="color: #1c2dab;">Total</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-if="insurance" t-field="insurance.total_amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th style="color: #1c2dab;">Execes</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span style="color: #4fc9e2;" t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.excess"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </table>
+                            <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+
+                               t-as="insurance">
+                                <table t-if="o.insurence_category == 'family_medical'" width="100%" height="100"
+                                       class="table-bordered mt32">
+                                    <tr>
+                                        <th>Insurance Company Name</th>
+                                        <td>
+                                            <span style="color: #4fc9e2;" t-if="insurance"
+                                                  t-field="insurance.insurance_company_id"/>
+                                        </td>
+                                        <td colsoan="2"></td>
+                                        <th>Copay</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Package Name</th>
+                                        <td></td>
+                                        <td colsoan="2"></td>
+                                        <th>Deductable</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Name Of The Members</th>
+                                        <th>Date Of Birth</th>
+                                        <th>Gender</th>
+                                        <th>Network</th>
+                                        <th>Premium</th>
+                                        <th>VAT</th>
+                                        <th>Total Premum</th>
+                                    </tr>
+                                </table>
+                            </t>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+

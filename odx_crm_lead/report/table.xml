@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="premium_table_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <center>
+                                <strong class="text-center">Insurance Premium</strong>
+                            </center>
+                            <br/>
+                            <table width="100%"  height="100" class="table table-bordered mt32">
+                                <tr>
+                                    <th>EXACT VEHICLE AND VALUE</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-if="insurance" t-field="insurance.insurance_company_id"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                </tr>
+                                <tr>
+                                    <th>BENEFITS</th>
+                                </tr>
+                                <tr>
+                                    <th>Loss or Damage to the insured vehicle</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.loss_dammage">
+                                                     <img t-att-src="'/odx_crm_lead/static/src/tik.png'" style="width:300px;height:50px"/>
+<!--                                                    <input type="checkbox" id="checkbox_white_status"-->
+<!--                                                           checked="checked"/>-->
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+
+                                </tr>
+                                <tr>
+                                    <th>Third Party Property Liability</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.third_party_liability">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Blood Money</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.blood_money">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Fire and Theft Cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.fire_theft">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Natural Perils</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.natural_perils">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Riot and Strike</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.riot_strike">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Repairs</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.repaire_type"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Emergency medical expenses</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.emergency_medical_expenses">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Personal Belongings</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.personal_belongigs">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Oman cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.oman_cover">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Off road Cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.p_off_road">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Guaranteed Repairs</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.guranteed_repairs">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>24 Hour Accident and Breakdown Recovery</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.accident_break_down">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Ambulance Cover</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <t t-if="insurance.insurance_premium_id">
+                                                <t t-if="insurance.insurance_premium_id.ambulance_cover">
+                                                    <input type="checkbox" id="checkbox_white_status"
+                                                           checked="checked"/>
+                                                </t>
+                                                <t t-else=" ">
+                                                    <input type="checkbox" id="checkbox_white_status_uncheck"/>
+                                                </t>
+                                            </t>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>Excess for windscreen damage</th>
+                                </tr>
+                                <tr></tr>
+                                <tr>
+                                    <th>Premium</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.premium"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <th>TAX Amount</th>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                </tr>
+                                <tr>
+                                    <th>Execes</th>
+                                    <t t-if="o.insurance_premium_table_ids" t-foreach="o.insurance_premium_table_ids"
+                                       t-as="insurance">
+                                        <td>
+                                            <span t-if="insurance.insurance_premium_id"
+                                                  t-field="insurance.insurance_premium_id.excess"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+

@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vehicle_brand_tree_view">
+            <field name="name">vehicle.brand.tree</field>
+            <field name="model">vehicle.brand</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="vehicle_brand_form_view">
+            <field name="name">vehicle.brand.form</field>
+            <field name="model">vehicle.brand</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_vehcle_brand">
+            <field name="name">Car Manufacturers</field>
+            <field name="res_model">vehicle.brand</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first item
+                </p>
+            </field>
+        </record>
+        <menuitem name="Car Manufacturers" id="menu_manufacturers" action="action_vehcle_brand" parent="uae_vehicles"/>
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
