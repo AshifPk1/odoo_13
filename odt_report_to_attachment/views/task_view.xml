@@ -1,11 +1,11 @@
 <odoo>
     <data>
-        <record id="helpdesk_ticket_form_inherit_print" model="ir.ui.view">
-            <field name="name">helpdesk.ticket.form.inherit</field>
-            <field name="model">helpdesk.ticket</field>
-            <field name="inherit_id" ref="helpdesk_timesheet.helpdesk_ticket_view_form_inherit_helpdesk_timesheet"/>
+        <record id="project_task_form_inherit_print" model="ir.ui.view">
+            <field name="name">project.task.form.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
             <field name="arch" type="xml">
-                <xpath expr="//button[@name='assign_ticket_to_self']" position="after">
+                <xpath expr="//button[@name='action_assign_to_me']" position="after">
                     <button name="generate_attachment" string="Generate SDR" type="object"
                             class="oe_highlight"/>
                 </xpath>

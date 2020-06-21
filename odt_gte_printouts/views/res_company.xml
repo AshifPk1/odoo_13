@@ -1,0 +1,29 @@
+<odoo>
+     <record id="res_company_arabic" model="ir.ui.view">
+            <field name="name">res.company.arabic.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='phone']" position="before">
+                    <label for="street" string="Company Address Arabic"/>
+                    <div class="o_address_format">
+                        <field name="street_1" placeholder="Street..." class="o_address_street"/>
+                        <field name="street_2" placeholder="Street 2..." class="o_address_street"/>
+                        <div class="o_row">
+                            <field name="city_arabic" placeholder="City" class="o_address_city"/>
+                            <field name="state_arabic" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+                            <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                        </div>
+                        <field name="country_arabic" placeholder="Country" class="o_address_country" options='{"no_open": True}'/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="replace">
+                    <label for="phone" string="Phone"/>
+                    <div class="o_row">
+                        <field name="phone"/>
+                        <field name="phone_arabic" placeholder="Phone Arabic" no_label="1"/>
+                    </div>
+                </xpath>
+            </field>
+     </record>
+</odoo>

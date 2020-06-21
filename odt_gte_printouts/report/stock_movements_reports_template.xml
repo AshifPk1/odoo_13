@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="stock_movements_reports_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h4>
+                        <center>
+                            <strong>STOCK MOVEMENT REPORT</strong>
+                        </center>
+                    </h4>
+                    <!--                    <br/>-->
+                    <!--                    <h4>-->
+                    <!--                        <center>Periode :-->
+                    <!--                            <span/>-->
+                    <!--                            <span t-if="date_from"-->
+                    <!--                                  t-esc="datetime.datetime.strptime(str(date_from), '%Y-%m-%d').strftime('%d/%m/%Y')"/>-->
+                    <!--                            - -->
+                    <!--                            <span t-if="date_to"-->
+                    <!--                                  t-esc="datetime.datetime.strptime(str(date_to), '%Y-%m-%d').strftime('%d/%m/%Y')"/>-->
+                    <!--                        </center>-->
+                    <!--                    </h4>-->
+                    <br/>
+                    <table width="100%">
+                        <tr>
+                            <th>Print Date : &#160; &#160;
+                                <span t-if="date_today"
+                                      t-esc="date_today"/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Date From : &#160; &#160;
+                                <span t-if="date_from"
+                                      t-esc="date_from"/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Date To : &#160; &#160;
+                                <span t-if="date_to"
+                                      t-esc="date_to"/>
+                            </th>
+
+                        </tr>
+                    </table>
+                    <h5 t-if="branch_name or prodcts_catg or products_name or product_tag or mrp_type ">
+                        <center>
+                            <strong>Filter By</strong>
+                        </center>
+                    </h5>
+                    <br/>
+                    <table width="100%">
+                        <tr t-if="branch_name">
+                            <th>Branch :
+                                <span t-esc="branch_name"></span>
+                            </th>
+                        </tr>
+                        <tr t-if="prodcts_catg">
+                            <th>Product Category :
+                                <span t-esc="prodcts_catg"></span>
+                            </th>
+
+                        </tr>
+                        <tr t-if="products_name">
+                            <th>Products :
+                                <span t-esc="products_name"></span>
+                            </th>
+
+                        </tr>
+                        <tr t-if="product_tag">
+                            <th>Product tag :
+                                <span t-esc="product_tag"></span>
+                            </th>
+
+                        </tr>
+                        <tr t-if="mrp_type">
+                            <th>Product MRP Type :
+                                <span t-esc="mrp_type"></span>
+                            </th>
+
+                        </tr>
+                    </table>
+                    <br/>
+                    <table name="table_main"
+                           class="table table-bordered table-condensed table-bordered table-striped" width="100%">
+                        <tr>
+                            <th colspan="3"/>
+                            <th colspan="4" class="text-center">QTY</th>
+                            <th colspan="2" class="text-center">VALUE</th>
+                        </tr>
+                        <tr>
+                            <th class="text-center" width="10%">SL No</th>
+                            <th class="text-center" width="10%">ITEM CODE</th>
+                            <th class="text-center" width="10%">ITEM NAME</th>
+                            <th class="text-center" style="font-size: 15px" width="10%">OPENING STOCK
+                                <span style="font-size: 15px;" t-if="date_from"
+                                      t-esc="date_from"/>
+                            </th>
+                            <th class="text-center" width="15%" >PURCHSED QTY
+                                <span style="font-size: 15px;" t-if="date_from"
+                                      t-esc="date_from"/>
+                                <span>To</span>
+                                <span style="font-size: 15px;" t-if="date_to"
+                                      t-esc="date_to"/>
+                            </th>
+                            <th class="text-center" width="15%" >SOLD QTY
+                                <span style="font-size: 15px;" t-if="date_from"
+                                      t-esc="date_from"/>
+                                <span>To</span>
+                                <span style="font-size: 15px;" t-if="date_to"
+                                      t-esc="date_to"/>
+                            </th>
+                            <th class="text-center" width="10%" >CLOSING STOCK
+                                <span style="font-size: 15px;" t-if="date_to"
+                                      t-esc="date_to"/>
+                            </th>
+                            <th class="text-center" width="10%">ITEM COST PRICE(LANDED COST)</th>
+                            <th class="text-center" width="10%">ITEM AVERAGE SELLING PRICE</th>
+                        </tr>
+                        <tr t-foreach="results" t-as="result">
+                            <td class="text-center">
+                                <span t-esc="result.get('serial_no')"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="result.get('default_code')"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="result.get('name')"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="result.get('qty_spfied_date')"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="result.get('purchase_qty')"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="result.get('sale_qty')"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="result.get('qty_available')"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="result.get('standard_price')"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-esc="result.get('avrg_sale_price')"/>
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+            </t>
+            <!--            </t>-->
+        </t>
+    </template>
+</odoo>

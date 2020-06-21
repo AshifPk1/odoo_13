@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="report_receipt_voucher_view">
+        <t t-call="web.html_container">
+            <t t-call="odt_gte_printouts.external_receipt_voucher_layout_standard">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="padding-top:70px">
+                    <div class="row">
+                        <div class="col-9">
+                            <table style="width:100%;border-right: 1px solid black;">
+                                <tr>
+                                    <td class="text-right" style="font-size:12px">
+                                        <span t-field="doc.invoice_ids.invoice_user_id"/>
+                                    </td>
+                                    <td class="text-center" style="font-size:12px;color:#B22203">أعدت بواسطة<br/>:Prepared by
+                                    </td>
+                                     <td class="text-right" style="font-size:12px">
+                                         <span t-field="doc.invoice_ids.invoice_user_id"/>
+                                     </td>
+
+                                    <td class="text-center" style="font-size:12px;color:#B22203">‫‫ا‬‫لبا‬‫ئع‬‬<br/>:Salesman
+                                    </td>
+                                    <td class="text-right" style="font-size:12px"><span t-field="doc.partner_id.customer_sequence"/></td>
+                                    <td class="text-right"  style="padding-right:4px;font-size:12px;color:#B22203">رمز العميل<br/>: CustomerCode
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-bottom:10px">
+                                        <span style="font-size:12px;color:#B22203">Customer Details</span>
+                                        <br/>
+                                       <b> <span style="font-size:13px;" t-field="doc.partner_id.name_en">
+                                        </span></b>
+                                        <br/>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.street"/>,<span style="font-size:12px;" t-field="doc.partner_id.street2"/>, <span style="font-size:12px;" t-field="doc.partner_id.city"/><br/>
+                                            Tel: <span style="font-size:12px;" t-field="doc.partner_id.phone"/><br/>
+
+                                    </td>
+                                    <td class="text-right"  style="padding-right:4px" colspan="3">
+                                        <span style="font-size:12px;color:#B22203">تفاصيل العميل</span>
+                                        <br/>
+                                       <b> <span style="font-size:13px;" t-field="doc.partner_id.name_ar">
+                                        </span></b>
+                                        <br/>
+                                       <span style="font-size:12px;" t-field="doc.partner_id.street_1"/>,<span style="font-size:12px;" t-field="doc.partner_id.street_2"/>, <span style="font-size:12px;" t-field="doc.partner_id.city_arabic"/><br/>
+                                            ‫هاتف‬: <span style="font-size:12px;" t-field="doc.partner_id.phone_arabic"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span style="font-size:12px;color:#B22203">CR :</span>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.com_register"/>/
+                                        <span style="font-size:12px;color:#B22203">VAT :</span>
+                                        <span style="font-size:9px;" t-field="doc.partner_id.vat"/>
+                                    </td>
+                                    <td colspan="3" class="text-right" style="padding-right:4px">
+                                        <span style="font-size:12px;" t-field="doc.partner_id.com_register"/>
+                                        <span style="font-size:12px;color:#B22203">‫القيمة ‫المضافة:</span>
+                                        <span style="font-size:9px;" t-field="doc.partner_id.vat"/>/
+                                        <span style="font-size:12px;color:#B22203"> ‫س‬.‫ت‬:‫‬</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                         <div class="col-3 text-center">
+                                 <b><span style="font-size:14px;color:#B22203">رقم سند القبض</span></b><br/>
+                                <span style="font-size:14px;color:#B22203"><b>VOUCHER NUMBER</b></span><br/>
+                                <b><span style="font-size:14px;" t-field="doc.name"/></b><br/>
+                                <b><span style="font-size:14px;color:#B22203">(DATE)التاريخ</span></b><br/>
+                                <b><span style="font-size:14px;" t-field="doc.payment_date"/></b><br/>
+                                <b><span style="font-size:14px;color:#B22203">(BRANCH)‫‫الفرع‬‬‬</span></b><br/>
+                                <b><span style="font-size:14px;" t-field="doc.branch_id"/></b>
+                            </div>
+                    </div><br/>
+                    <div class="row" style="border-top: 1px solid black;">
+                    </div><br/>
+                    <div class="text-center">
+                        <span>
+                            (PARTICULARS)‫تفا‫صيل‬‬
+                        </span>
+                    </div>
+                    <table class="table table-sm o_main_table" name="table_particulars"
+                           style="border: 1px solid black;font-size:13px;">
+                        <thead>
+                            <tr style="color:white;background-color:#B22203;border-top:2px solid black;">
+                                <t t-set="colspan" t-value="6"/>
+                                <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                    <span>‫طريقة الدفع‬<br/>Payment Mode
+                                    </span>
+                                </th>
+                                <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                    <span>المرجع<br/>Reference
+                                    </span>
+                                </th>
+                                <th width="25%" style="padding:0px;border: 1px solid black;" name="th_description" class="text-center">
+                                    <span>التاريخ<br/>Date
+                                    </span>
+                                </th>
+                                <th width="13%" style="padding:0px" name="th_priceunit" class="text-center ">
+                                    <span>‫المبلغ‬<br/>Amount
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid black;" class="text-center"><span t-field="doc.payment_method_id"/></td>
+                                <td style="border: 1px solid black;" class="text-center"><span t-field="doc.name"/></td>
+                                <td style="border: 1px solid black;" class="text-center"><span t-field="doc.payment_date"/></td>
+                                <td style="border: 1px solid black;" class="text-center"><span t-field="doc.amount"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <span>
+                             (PAYMENT DETAILS)تفاصيل الدفع
+                        </span>
+                    </div><br/>
+
+                    <div class="row" t-if="len(doc.invoice_ids) &gt; 5" >
+
+                        <div class="col-6" >
+                             <table class="table table-sm o_main_table" name="table_payment_details_one"
+                                    style="border: 1px solid black;font-size:13px;">
+                                <thead>
+                                    <tr style="color:white;background-color:#B22203;border-top:2px solid black;">
+                                        <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                            <span>رقم الفاتورة<br/>INVOICE NO
+                                            </span>
+                                        </th>‫
+                                        <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                            <span>المبلغ<br/>AMOUNT
+                                            </span>
+                                        </th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <t t-set="tab_no" t-value="0" />
+                                      <t t-foreach="doc.invoice_ids" t-as="line">
+                                          <t t-set="tab_no" t-value="tab_no+1" />
+                                          <tr t-if="tab_no &lt; 6">
+                                         <td style="border: 1px solid black;" class="text-center" ><span t-field="line.name"/> </td>
+                                         <td style="border: 1px solid black;" class="text-center" ><span t-field="line.amount_total"/> </td>
+                                     </tr>
+                                     </t>
+                                 </tbody>
+                            </table>
+                        </div>
+                         <div class="col-6">
+                            <table class="table table-sm o_main_table" name="table_payment_details_two"
+                            style="border: 1px solid black;font-size:13px;">
+                                <thead>
+                                    <t t-set="rowspan" t-value="6"/>
+                                    <tr style="color:white;background-color:#B22203;border-top:2px solid black;">
+                                        <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                            <span>‫رقم الفاتورة<br/>INVOICE NO
+                                            </span>
+                                        </th>
+                                        <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                            <span>المبلغ<br/>AMOUNT
+                                            </span>
+                                        </th>
+                                     </tr>
+                                 </thead>
+                                     <t t-set="tab_no" t-value="0" />
+<!--                                     <t t-set="no" t-value="0" />-->
+                                      <t t-foreach="doc.invoice_ids" t-as="line">
+                                          <t t-set="tab_no" t-value="tab_no+1" />
+                                          <tr t-if="tab_no &gt; 5">
+                                            <td style="border: 1px solid black;" class="text-center" ><span t-field="line.name"/> </td>
+                                            <td style="border: 1px solid black;" class="text-center" ><span t-field="line.amount_total"/> </td>
+<!--                                              <t t-set="no" t-value="no+1" />-->
+                                          </tr>
+                                        </t>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row" t-if="len(doc.invoice_ids) &lt; 5">
+                        <div class="col-12">
+                             <table class="table table-sm o_main_table" name="table_payment_details_one"
+                            style="border: 1px solid black;font-size:13px;">
+                                <thead>
+                                    <tr style="color:white;background-color:#B22203;border-top:2px solid black;">
+                                        <t t-set="rowspan" t-value="6"/>
+                                        <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                            <span>‫رقم الفاتورة<br/>INVOICE NO
+                                            </span>
+                                        </th>
+                                        <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_amount" class="text-center">
+                                            <span>المبلغ<br/>AMOUNT
+                                            </span>
+                                        </th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <t t-set="total_amount" t-value="0" />
+                                      <t t-foreach="doc.invoice_ids" t-as="line">
+                                          <tr>
+                                         <td style="border: 1px solid black;" class="text-center" ><span t-field="line.name"/> </td>
+                                         <td style="border: 1px solid black;" class="text-center" ><span t-field="line.amount_total"/> </td>
+                                            <t t-set="total_amount" t-value="total_amount+line.amount_total" />
+                                          </tr> </t>
+                                     <tr>
+                                    <td style="color:white;background-color:#B22203;border: 1px solid black;">
+                                        المجموع(TOTAL)
+                                    </td>
+                                    <td class="text-center"
+                                        style="color:white;background-color:black;border: 1px solid black;">
+                                        <span t-esc="total_amount" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                    </td>
+                                 </tr>
+                                 </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row" t-if="len(doc.invoice_ids) &gt; 5">
+                        <div class="col-6">
+
+                        </div>
+                        <div class="col-6">
+                            <table class="table table-sm o_main_table" name="table_total_amount"
+                            style="border: 1px solid black;font-size:13px;">
+                                <t t-set="total_amount" t-value="0" />
+                                <t t-foreach="doc.invoice_ids" t-as="line">
+                                    <t t-set="total_amount" t-value="total_amount+line.amount_total" />
+                                </t>
+                                 <tr>
+                                    <td style="color:white;background-color:#B22203;border: 1px solid black;">
+                                        المجموع(TOTAL)
+                                    </td>
+                                    <td class="text-right"
+                                        style="color:white;background-color:black;border: 1px solid black;">
+                                        <span t-esc="total_amount" t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                    </td>
+                                 </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="row">
+                        <div class="col-6">
+                             <table class="table table-sm o_main_table">
+                            <tr>
+                                    <td>
+                                        <span >AMOUNT IN WORDS</span>
+                                    </td>
+                            </tr>
+                                 <tr>
+                                     <td style="border: 1px solid black;">
+                                        <span t-esc="doc.currency_id.with_context(lang='en_US').amount_to_text(total_amount)"/>
+                                    </td>
+
+                                 </tr>
+                             </table>
+                        </div>
+                        <div class="col-6">
+                            <table class="table table-sm o_main_table">
+                            <tr>
+                                <td class="text-right">
+                                        <span style="color:#B22203">المبلغ بالحروف</span>
+                                    </td>
+                            </tr>
+                            <tr>
+                                 <td  class="text-right" style="border: 1px solid black;">
+                                        <span t-esc="doc.currency_id.with_context(lang='ar_SY').amount_to_text(total_amount)"/>
+                                    </td>
+                            </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div  style="margin-top:40px;">
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td width="20%"></td>
+                                    <td width="20%"></td>
+                                    <td width="20%"></td>
+                                    <td class="text-center">
+                                        <span t-field="doc.invoice_ids.invoice_user_id"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-left" style="border-top: 1px solid black;">
+                                        <span style="color:#B22203">استلمت من قبل(Received by)</span>
+                                    </td>
+                                    <td width="2%"></td>
+                                    <td width="2%"></td>
+                                    <td width="2%"></td>
+                                    <td class="text-right" style="border-top: 1px solid black;">
+                                        <span style="color:#B22203">‫صادر‬ ‫من‬(Issued by)</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            </t>
+            </t>
+        </t>
+    </template>
+</odoo>

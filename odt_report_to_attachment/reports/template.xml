@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <template id="Print_helpdesk_ticket">
+        <template id="print_sdr_attachment_report">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="web.external_layout">
-                        <div class="page">
-                            <br/>
-                            <br/>
+                    <t t-call="odt_report_to_attachment.external_layout_sdr">
+                        <div class="page" style="font-size: 12px;">
                             <table class="table table-sm table-bordered">
                                 <tr>
                                     <th>Date</th>
-                                    <td></td>
+                                    <td>
+                                        <span t-field="o.date"/>
+                                    </td>
                                     <th>التاريخ</th>
                                 </tr>
                                 <tr>
                                     <th>
-                                        TASK NO /TICKET NO
+                                        TASK/TICKET
                                     </th>
                                     <td>
-                                        <span t-field="o.ticket_number_val"/>
+                                        <span t-field="o.number"/>
                                     </td>
-                                    <th>رقم (المھمة / تذكرة الخدمة)</th>
+                                    <th> رقم (المھمة / تذكرة الخدمة) </th>
                                 </tr>
                                 <tr>
                                     <th>Client Name</th>
@@ -32,12 +32,16 @@
                                 </tr>
                                 <tr>
                                     <th>Time In</th>
-                                    <td></td>
+                                    <td>
+                                        <span t-field="o.in_time"/>
+                                    </td>
                                     <th>وقت الدخول</th>
                                 </tr>
                                 <tr>
                                     <th>Time Out</th>
-                                    <td></td>
+                                    <td>
+                                        <span t-field="o.out_time"/>
+                                    </td>
                                     <th>وقت الخروج</th>
                                 </tr>
                             </table>
@@ -72,7 +76,7 @@
                                 <tr>
                                     <td>Portal Access Training</td>
                                     <td>
-                                        <t t-if="o.is_portal_acces_trainig">
+                                        <t t-if="o.is_portal_access_training">
                                             <input type="checkbox" id="checkbox_white_status" checked="checked"/>
                                         </t>
                                         <t t-else=" ">
@@ -80,7 +84,7 @@
                                         </t>
                                     </td>
                                     <td>
-                                        <t t-if="o.is_opppenig_balance_method">
+                                        <t t-if="o.is_opening_balance_method">
                                             <input type="checkbox" id="checkbox_white_status" checked="checked"/>
                                         </t>
                                         <t t-else=" ">
@@ -100,7 +104,7 @@
                                         </t>
                                     </td>
                                     <td>
-                                        <t t-if="o.is_end_user_trainig">
+                                        <t t-if="o.is_end_user_training">
                                             <input type="checkbox" id="checkbox_white_status" checked="checked"/>
                                         </t>
                                         <t t-else=" ">
@@ -132,7 +136,7 @@
                                 <tr>
                                     <td>Installation</td>
                                     <td>
-                                        <t t-if="o.is_installtion">
+                                        <t t-if="o.is_installation">
                                             <input type="checkbox" id="checkbox_white_status" checked="checked"/>
                                         </t>
                                         <t t-else=" ">
@@ -211,15 +215,16 @@
                                     </td>
                                 </tr>
                             </table>
-                            <table>
-                                <tr>
-                                    <th>Details of Work / وصفالعمل</th>
-                                </tr>
-                                <td>
-                                    <span t-field="o.details_of_work"/>
-                                </td>
-                            </table>
-                            <br/>
+                            <div style="min-height: 400px;max-height: 700px">
+                              <table>
+                                  <tr>
+                                      <th>Details of Work / وصفالعمل</th>
+                                  </tr>
+                                  <tr>
+                                      <td><span t-field="o.details_of_work"/></td>
+                                  </tr>
+                              </table>
+                            </div>
                             <table width="100%">
                                 <tr>
                                     <center>
@@ -237,9 +242,7 @@
                                 <tr>
                                     <th>Name / Title</th>
                                     <th></th>
-                                    <th>Signature
-
-                                    </th>
+                                    <th>Signature</th>
                                     <th></th>
                                     <th>Name / Title</th>
                                     <th></th>
@@ -254,8 +257,8 @@
                                     </td>
                                     <td></td>
                                     <td>
-                                        <t t-if="o.user_id">
-                                            <img t-att-src="image_data_uri(o.user_id.digital_signature)"
+                                        <t t-if="o.user_id.sudo().sign_signature">
+                                            <img t-att-src="image_data_uri(o.user_id.sudo().sign_signature)"
                                                  style="max-height: 4cm; max-width: 8cm;"/>
                                         </t>
                                     </td>

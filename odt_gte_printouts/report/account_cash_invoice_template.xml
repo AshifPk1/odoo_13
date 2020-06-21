@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="report_account_view">
+        <t t-call="web.html_container">
+            <t t-call="odt_gte_printouts.external_layout_standard">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="padding-top:70px">
+                    <div class="row">
+                        <div class="col-9">
+                            <table style="width:100%;border-right: 1px solid black;">
+                                <tr>
+                                    <td class="text-right" style="font-size:12px"><span t-field="doc.ref"/></td>
+                                    <td class="text-right" style="font-size:12px;color:#B22203">‫رقم‬ ‫طلب‬ ‫العميل‬<br/>:Customer Order Number</td>
+                                    <td class="text-right" style="font-size:12px"></td>
+                                    <td class="text-right"  style="padding-right:4px;font-size:12px;color:#B22203">‫‫رمز العميل<br/>: CustomerCode</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="padding-bottom:10px">
+                                        <span style="font-size:12px;color:#B22203">Customer Details</span>
+                                        <br/>
+                                       <b> <span style="font-size:11px;" t-field="doc.partner_id.name_en">
+                                        </span></b>
+                                        <br/>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.street"/>,<span style="font-size:12px;" t-field="doc.partner_id.street2"/>, <span style="font-size:12px;" t-field="doc.partner_id.city"/><br/>
+                                            Tel: <span style="font-size:12px;" t-field="doc.partner_id.phone"/><br/>
+
+                                    </td>
+                                    <td class="text-right"  style="padding-right:4px" colspan="2">
+                                        <span style="font-size:12px;color:#B22203">‫تفا‬‫صيل‬ ‫العميل‬</span>
+                                        <br/>
+                                       <b> <span style="font-size:11px;" t-field="doc.partner_id.name_ar">
+                                        </span></b>
+                                        <br/>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.street_1"/>,<span style="font-size:12px;" t-field="doc.partner_id.street_2"/>, <span style="font-size:12px;" t-field="doc.partner_id.city_arabic"/><br/>
+                                            ‫هاتف‬: <span style="font-size:12px;" t-field="doc.partner_id.phone_arabic"/>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td colspan="2">
+                                        <span style="font-size:12px;color:#B22203">CR:</span>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.com_register"/>/
+                                        <span style="font-size:12px;color:#B22203">VAT:</span>
+                                        <span style="font-size:9px;" t-field="doc.partner_id.vat"/>
+                                    </td>
+                                    <td colspan="2" class="text-right" style="padding-right:4px">
+                                        <span style="font-size:12px;" t-field="doc.partner_id.com_register"/>
+                                        <span style="font-size:12px;color:#B22203">‫‫القيمة‬ ‫المضافة‬:</span>
+                                        <span style="font-size:9px;" t-field="doc.partner_id.vat"/>/
+                                        <span style="font-size:10px;color:#B22203"> ‫س‬.‫ت‬:‫‬</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                         <div class="col-3 text-center">
+                                 <b><span style="font-size:14px;color:#B22203">رقم الفاتورة</span></b><br/>
+                                <span style="font-size:14px;color:#B22203"><b>INVOICE NUMBER :</b></span><br/>
+                                <b><span style="font-size:14px;" t-field="doc.name"/></b><br/>
+                                <b><span style="font-size:14px;color:#B22203">(DATE)التاريخ</span></b><br/>
+                                <b><span style="font-size:14px;" t-field="doc.invoice_date"/></b><br/>
+                                <b><span style="font-size:14px;color:#B22203"># ر‫قم‬ ‫طلب‬ ‫ا‬‫لشر‬‫ا‬‫ء‬(.P.O)</span></b><br/>
+                                <b><span style="font-size:14px;" t-field="doc.po"></span></b>
+                            </div>
+                    </div><br/>
+                    <table class="table table-sm o_main_table" name="invoice_line_table"
+                           style="border: 1px solid black;font-size:13px;">
+                        <thead>
+                            <tr style="color:white;background-color:#B22203;border-top:2px solid black;">
+                                <t t-set="colspan" t-value="6"/>
+                                <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                    <span>التسلسل<br/>SKU #
+                                    </span>
+                                </th>
+                                <th width="25%" style="padding:0px;border: 1px solid black;" name="th_description" class="text-center">
+                                    <span>الوصف <br/>DESCRIPTION
+                                    </span>
+                                </th>
+
+                                <th width="8%" style="padding:0px;border: 1px solid black;" name="th_quantity" class="text-center">
+                                    <span>الكميه<br/>QTY
+                                    </span>
+                                </th>
+                                <th width="13%" style="padding:0px" name="th_priceunit" class="text-center ">
+                                    <span>سعرالوحده<br/>Unit Price
+                                    </span>
+                                </th>
+                                <th width="14%" style="padding:0px;border: 1px solid black;" name="th_priceunit" class="text-center ">
+                                    <span>المجموع الفرعي<br/>SUB TOTAL
+                                    </span>
+                                </th>
+                                <th width="14%" style="padding:0px;border: 1px solid black;" name="th_priceunit" class="text-center ">
+                                    <span>0%القمية المضافة<br/>Vat 5%
+                                    </span>
+                                </th>
+                                <th width="16%" style="padding:0px;border: 1px solid black;" name="th_priceunit" class="text-center ">
+                                    <span>المجموع<br/>Total
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <t t-set="total_discount" t-value="0" />
+                        <tbody class="invoice_tbody">
+                            <t t-foreach="doc.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"
+                               t-as="line">
+                                <t t-if="line.discount">
+                                    <t t-set="total_discount" t-value="total_discount+(line.price_unit-line.price_subtotal)" />
+
+                                </t>
+                                <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                    <t t-if="not line.display_type" name="account_invoice_line_accountable">
+                                        <td style="border: 1px solid black;" class="text-center" name="account_invoice_line_name">
+                                            <span t-field="line.product_id.default_code"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center" name="account_invoice_line_name">
+                                            <span t-field="line.name"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-field="line.quantity"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-field="line.price_unit"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-field="line.price_subtotal"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-field="line.tax_ids"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-field="line.price_total"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+<!--                    <div >-->
+                    <div class="row" style="page-break-inside:avoid;page-break-before: auto;">
+                        <div class="col-7">
+                            <table width="100%">
+                                <tr>
+                                    <td width="50%">
+                                        <span style="color:#B22203">Payment Terms :</span>
+
+                                    </td>
+                                    <td class="text-right" width="50%">
+                                        <span style="color:#B22203">:شروط الدفع</span>
+
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%"><span t-field="doc.invoice_payment_term_id.name"/>
+                                    </td>
+                                    <td class="text-right" width="50%"><span t-field="doc.invoice_payment_term_id.payment_term_arabic"/></td>
+                                </tr>
+                                <tr>
+                                    <td>&#160;<br/><br/><br/><br/>
+                                    </td>
+                                    <td>&#160;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span style="color:#B22203">AMOUNT IN WORDS</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span style="color:#B22203">المبلغ بالحروف</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black;">
+                                        <span t-esc="doc.currency_id.with_context(lang='en_US').amount_to_text(doc.amount_total)"/>
+                                    </td>
+                                    <td class="text-right" style="border: 1px solid black;">
+                                        <span t-esc="doc.currency_id.with_context(lang='ar_SY').amount_to_text(doc.amount_total)"/>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <div class="col-5;">
+                            <table name="calc_net_to_oay" class="table table-bordered "
+                                   style="border: 1px solid black;width:100%;font-size:13px;font-weight: bold;">
+                                <tr >
+
+                                    <td style="width:60%;border: 1px solid black;">المجموع الفرعي(SUB TOTAL)</td>
+                                    <td class="text-right" style="width:40%;border: 1px solid black;">
+                                        <span t-field="doc.amount_untaxed"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <t t-set="tax_amount" t-value="doc.amount_total-doc.amount_untaxed"/>
+                                    <td style="border: 1px solid black;">0%القمية المضافة‬(VAT 5%)</td>
+                                    <td style="border: 1px solid black;" class="text-right">
+                                        <span t-esc="tax_amount"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black;">شحن(FRIEGHT)</td>
+                                    <td style="border: 1px solid black;" class="text-right"></td>
+                                </tr>
+                                <tr>
+                                    <td style="color:#B22203;border: 1px solid black;">‫خصم‬ (DISCOUNT)</td>
+                                    <td style="border: 1px solid black;color:#B22203;" class="text-right">
+                                        <span t-esc="total_discount"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:white;background-color:#B22203;border: 1px solid black;">
+                                        صافي الدفع(NET TO PAY)
+                                    </td>
+                                    <td class="text-right"
+                                        style="color:white;background-color:black;border: 1px solid black;">
+                                        <span t-field="doc.amount_total"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="page-break-inside: avoid;page-break-before: auto;">
+                    <div class="row">
+                        <div class="col-5">
+                            <span style="color:#B22203">‫الشروط‬ ‫واألحكام‬ P.T.O (Terms and Codition P.T.O) </span>
+                            <br/>
+                            <p style="text-align:justify;font-size:12px;">
+                                GTE (وشروط الفاتورةالنقدية(الإصدار:<span t-field="doc.invoice_date"/>
+                               <br/> ‫تتم‬ ‫طباعة‬ ‫الشروط‫ المطبقة‬ ‫على‬ ‫هذه‬ ‫لمعاملة‬ ‫في‬ ‫نها‬‫ية‬ ‫هذه‬ ‫الفاتورة‬.
+                                <br/>
+                                GTE Terms &amp; Condition of Cash Invoice (ver. <span t-field="doc.invoice_date"/>)  applicable
+                                for this transaction are printed at the end of this invoice.
+                            </p>
+                        </div>
+                        <div class="col-7" style="margin-top:40px;">
+                            <table width="100%">
+                                <tr>
+                                    <td class="text-center" style="border-bottom: 1px solid black;">
+                                        <span t-field="doc.invoice_user_id"/>
+                                    </td>
+                                    <td width="2%">
+                                    </td>
+                                    <td class="text-center" style="border-bottom: 1px solid black;">
+                                        <span t-field="doc.invoice_user_id"/>
+                                    </td>
+                                    <td width="2%">
+                                    </td>
+                                    <td class="text-center" style="border-bottom: 1px solid black;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <span style="color:#B22203">بائع(Salesman)</span>
+                                    </td>
+                                    <td width="2%">
+                                    </td>
+                                    <td class="text-center">
+                                        <span style="color:#B22203">‫صادر‬ ‫من‬(Issued by)</span>
+                                    </td>
+                                    <td width="2%">
+                                    </td>
+                                    <td class="text-center">
+                                        <span style="color:#B22203">استلمت من قبل(Received by)</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+            </t>
+        </t>
+    </template>
+</odoo>

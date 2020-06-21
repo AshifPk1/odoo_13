@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="report_print_invoice">
+        <t t-call="web.html_container">
+            <t>
+            <t t-foreach="docs" t-as="doc">
+            <t t-if="doc.type == 'out_invoice'">
+                    <t t-call="odt_gte_printouts.report_gte_invoice"></t>
+                </t>
+                <t t-if="doc.type == 'out_refund'">
+                    <t t-call="odt_gte_printouts.report_account_credit_view"></t>
+                </t>
+                <t t-if="doc.type == 'in_refund'">
+                    <t t-call="odt_gte_printouts.report_account_debit_view"></t>
+                </t>
+             </t>
+            </t>
+        </t>
+    </template>
+</odoo>

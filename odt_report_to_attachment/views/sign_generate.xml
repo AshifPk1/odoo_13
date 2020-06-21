@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <record id="sdr_generate_form" model="ir.ui.view">
+            <field name="name">sdr.generate.form</field>
+            <field name="model">sdr.generate</field>
+            <field name="arch" type="xml">
+                <form string="SDR Generate">
+                    <sheet>
+                        <group name="main_fields" class="o_label_nowrap">
+                            <label for="name" string="SDR Name"/>
+                            <field name="name" nolabel="1"/>
+                            <field name="sign_state" invisible="1"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="partner_id"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="in_time" widget="float_time"/>
+                                <field name="out_time" widget="float_time"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Service Type" name="sdr">
+                                <group>
+                                    <group>
+                                        <group string="Plan">
+                                            <field name="is_project_plan" widget="boolean"/>
+                                            <field name="is_portal_access_training" widget="boolean"/>
+                                            <field name="is_data_template" widget="boolean"/>
+                                            <field name="is_kick_of_meeting"/>
+                                            <field name="is_installation"/>
+                                        </group>
+                                        <group string="Organize">
+                                            <field name="is_key_user_interview"/>
+                                            <field name="is_pdd_approval"/>
+                                            <field name="is_meeting"/>
+                                        </group>
+                                    </group>
+                                    <group>
+                                        <group string="Test/Train">
+                                            <field name="is_test"/>
+                                            <field name="is_opening_balance_method"/>
+                                            <field name="is_end_user_training"/>
+                                            <field name="is_indoor_skydiving"/>
+                                            <field name="is_cut_of_plan"/>
+                                        </group>
+                                        <group string="Other">
+                                            <field name="is_support"/>
+                                            <field name="is_meeting_visit"/>
+                                        </group>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="details_of_work"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+

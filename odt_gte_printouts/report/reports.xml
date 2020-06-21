@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="gte_invoice_printout" model="report.paperformat">
+            <field name="name">GTE Invoice Print</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="margin_top">25</field>
+            <field name="margin_bottom">25</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">25</field>
+            <field name="dpi">90</field>
+            <field name="orientation">Portrait</field>
+        </record>
+        <record id="gte_term_condition_printout" model="report.paperformat">
+            <field name="name">GTE Term Condition Print</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">2</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+            <field name="orientation">Portrait</field>
+        </record>
+        <report
+                id="report_invoice_move_gte_cash"
+                model="stock.picking"
+                string="GTE Deliver Slip"
+                name="odt_gte_printouts.report_stock_view"
+                file="odt_gte_printouts.report_stock_view"
+                report_type="qweb-pdf"
+                paperformat="gte_invoice_printout"
+        />
+        <report
+                id="report_account_move_debit_gte_cash"
+                model="account.move"
+                string="GTE INVOICE"
+                name="odt_gte_printouts.report_print_invoice"
+                file="odt_gte_printouts.report_print_invoice"
+                report_type="qweb-pdf"
+                paperformat="gte_invoice_printout"
+        />
+        <report
+                id="report_account_move_receipt_voucher_gte_cash"
+                model="account.payment"
+                string="GTE RECEIPT VOUCHER"
+                name="odt_gte_printouts.report_receipt_voucher_view"
+                file="odt_gte_printouts.report_receipt_voucher_view"
+                report_type="qweb-pdf"
+                paperformat="gte_invoice_printout"
+        />
+        <report
+            id="stock_movements_reports"
+            model="stock.movements.report.wiz"
+            string="Stock Movements Report"
+            report_type="xlsx"
+            name="stock.report.report.xlsx"
+            file="Stock Movements Report"
+            attachment_use="False"
+            menu="False"
+        />
+        <report
+            id="stock_movements_reports_pdf"
+            model="stock.picking"
+            string="Stock Movements Report"
+            report_type="qweb-pdf"
+            name="odt_gte_printouts.stock_movements_reports_template"
+            file="odt_gte_printouts.stock_movements_reports_template"
+            attachment_use="False"
+            menu="False"
+        />
+
+
+    </data>
+
+</odoo>

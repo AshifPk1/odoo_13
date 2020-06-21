@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <report
-            id="helpdesk_ticket_report"
-            string="Print Ticket"
-            model="helpdesk.ticket"
+            id="sdr_attachment_report"
+            string="Print SDR"
+            model="sdr.generate"
             report_type="qweb-pdf"
-            name="odt_report_to_attachment.Print_helpdesk_ticket"
-            file="odt_report_to_attachment.Print_helpdesk_ticket"
+            name="odt_report_to_attachment.print_sdr_attachment_report"
+            file="odt_report_to_attachment.print_sdr_attachment_report"
     />
 </odoo>

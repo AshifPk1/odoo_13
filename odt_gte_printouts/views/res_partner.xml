@@ -1,0 +1,58 @@
+<odoo>
+     <record id="res_partner_arabic" model="ir.ui.view">
+            <field name="name">res.partner.arabic.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="before">
+                    <label for="street" string="Company Address Arabic"/>
+                            <div class="o_address_format">
+                                <field name="street_1" placeholder="Street..." class="o_address_street"/>
+                                <field name="street_2" placeholder="Street 2..." class="o_address_street"/>
+                                <div class="o_row">
+                                    <field name="city_arabic" placeholder="City" class="o_address_city"/>
+                                    <field name="state_arabic" class="o_address_state" placeholder="State" options='{"no_open": True}'/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                 </div>
+                                <field name="country_arabic" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>
+                            </div>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="replace">
+                    <div class="o_row">
+                        <field name="phone" />
+                        <field name="phone_arabic" placeholder="Phone Arabic" no_label="1"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='mobile']" position="replace">
+                    <div class="o_row">
+                        <field name="mobile" />
+                        <field name="mobile_arabic" placeholder="Mobile Arabic" no_label="1"/>
+                    </div>
+                </xpath>
+<!--                <xpath expr="//field[@name='vat']" position="before">-->
+<!--                    <field name="com_register" string="CR"/>-->
+<!--                    <field name="salesman_id" string="Sales Man"/>-->
+<!--                    <field name="customer_sequence" string="Customer Code"/>-->
+
+<!--                </xpath>-->
+
+
+
+            </field>
+     </record>
+    <record id="res_partner_arabic_account" model="ir.ui.view">
+            <field name="name">res.partner.arabic.account</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//field[@name='bank_ids']/tree/field[@name='acc_number']" position="after">
+                    <field name="acc_number_arabic"/>
+                        <field name="iban_english"/>
+                        <field name="iban_arabic"/>
+
+                </xpath>
+            </field>
+    </record>
+
+
+</odoo>

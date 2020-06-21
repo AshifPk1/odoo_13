@@ -1,0 +1,15 @@
+<odoo>
+     <record id="account_move_inherited_form" model="ir.ui.view">
+            <field name="name">account.move.inherited.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group[@id='header_right_group']/div[hasclass('o_td_label')]" position='before'>
+                    <field name="print"  attrs="{'invisible':[('type', '!=', 'out_invoice')],'required': [('type', '=', 'out_invoice')],}" />
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position='after'>
+                        <field name="po"/>
+                </xpath>
+            </field>
+     </record>
+</odoo>

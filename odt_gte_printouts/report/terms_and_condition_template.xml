@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <template id="report_terms_and_condition">
+        <t t-call="web.basic_layout">
+            <div class="page" >
+        <div class="header">
+            <div style="text-align:center;">
+             <span  > General Trading &amp; Equipment Co</span><br/>
+            <span >TERMS AND CONDITIONS OF SALE</span><br/>
+                <span >(Ver. 12/03/2020)</span><br/></div>
+            <span style="font-size:15px;white-space: nowrap;">1. GENERAL (a) The Terms and Conditions of Sale outlined herein (hereinafter referred to as “the T&amp;C”) shall apply to the sale by Doosan Bobcat EMEA s.r.o. (hereinafter referred to as “Doosan”) to the
+                            person, firm or company<br/> to whom Doosan’s offer is made (hereinafter referred to as “the Purchaser”) of products, equipment and parts relating thereto (hereinafter referred to as “the Equipment”). T&amp;C
+                            together with sales order constitutes a contract<br/> (hereinafter referred to as “the Contract”) (b) In the event of a conflict between the T&amp;C and any distributor agreement between Doosan and the Purchaser
+                            or any other sales contract between Doosan and the Purchaser as the <br/>case may be, the terms of the distributor agreement or other purchase contract shall prevail. (c) Unless otherwise agreed in writing
+                            by Doosan, it shall be understood that Doosan proceeding with any sale shall be in accordance <br/>with the terms and conditions outlined herein. THESE TERMS AND CONDITIONS SHALL PREVAIL OVER
+                            ANY TERMS PUT FORWARD BY THE PURCHASER, UNLESS DOOSAN AGREES TO THEM EXPRESSLY IN WRITING.<br/> NO CONDUCT BY DOOSAN SHALL BE DEEMED TO CONSTITUTE
+                            ACCEPTANCE OF ANY TERMS PUT FORWARD BY THE PURCHASER.</span><br/>
+          <span style="font-size:15px;white-space: nowrap;">  2. PRICE AND PAYMENT (a) Unless otherwise agreed in writing between the parties, the terms of payment are net cash in advance. All prices may be varied by Doosan at any time upon thirty (30) days’
+                        notice, and the new price <br/>shall be applicable to all orders placed after the new price has entered into force. (b) Unless otherwise stated, all prices are EXW Incoterms®2020 at Doosan’s designated
+                        warehouse. Prices do not include the cost of special <br/>packaging, insurance, foreign taxes or duties, or any other charges which may be applicable to the export or import of the Equipment. If an Incoterms
+                        other than EXW is agreed, a further incremental charge shall be added to<br/> the Equipment price to cover the extra cost. Any such extra costs shall be reflected in the invoice sent to the Purchaser. (c) Doosan
+                        reserves the right to charge, without prior notice, interest at the annual rate of 5 (five) percent<br/> over EURIBOR 1 month (Euro Interbank Offered Rate) on all overdue accounts, such interest shall accrue on
+                        a day to day basis and will be charged in the same currency as the overdue amount. (d) If payment is agreed to be made <br/>by installments, in the event of default in payment of any one installment, all other
+                        sums payable under the Contract shall become immediately due and payable. (e) Any error of any kind whatsoever in any invoice of Doosan shall<br/> be notified to Doosan within seven (7) days of receipt of
+                        such invoice by the Purchaser. Failure to notify as herein required shall mean that the Purchaser is deemed to accept that the invoice is correct in all respects.
+                </span><br/>
+            <span>
+                    3. TITLE It is expressly agreed that the Equipment delivered remain the sole property of Doosan until complete payment for that Equipment has been received by Doosan. Only at this time will title of
+ownership pass to the Purchaser.
+                </span><br/>
+            <span>
+                    4. RISK Notwithstanding that the ownership of the Equipment may not have passed to the Purchaser as provided for in Article 3, the risk of loss in the Equipment shall pass to the Purchaser at the time of
+delivery to the Purchaser, its agent or any carrier in accordance with EXW Incoterms®2020, unless another Incoterms® has been agreed between the parties in writing.
+                </span><br/>
+                <span>
+                    5. ASSIGNMENT The Contract may not be assigned or transferred by the Purchaser without the prior written consent of Doosan. Doosan may assign or transfer the Contract without the necessity of
+consent.
+                </span><br/>
+             <span>
+                    6. SHIPMENT (a) Except if otherwise mentioned on any document issued by Doosan (order acknowledgement, invoice, or other), all shipments are made EXW Incoterms®2020 at Doosan’s designated
+warehouse. Unless agreed with the Purchaser, Doosan shall select the method of transportation, including place of storage, if necessary, in accordance with the shipping conditions current at time of or
+during shipment. Upon the Purchaser’s written request, Doosan will arrange to obtain ocean freight space, relevant insurances (which shall include standard warehouse to warehouse coverage), and
+forwarder’s services. All such charges shall be payable by the Purchaser. (b) All shipments are made for the Purchaser’s account. If shipments are delayed because of delayed payments or insufficient or
+delayed shipping instructions from the Purchaser, the Purchaser shall be charged for storage costs beginning immediately after Doosan’s notice that the Equipment ordered is ready for shipment and, if
+the Equipment is stored in Doosan’s factory, for not less than one per cent per month of the amount invoiced. (c) Partial shipments may be made and payments therefore shall become due in accordance
+with the terms hereof, as shipments are made and invoices raised. (d) Claims for shortages must be made by the Purchaser within two (2) days of receipt of goods.
+                </span><br/>
+            <span>
+                    7. DELIVERY AND DELAYS Shipment dates are understood to be estimated and in no event shall such dates be construed as falling within the meaning of “time is of the essence” or other broadly similar
+concepts having the same legal effect. Doosan shall not be liable for loss, damage, detention, delay or completion of an order due to acts of God, acts of terrorism, war, riots, civil insurrection, strikes, work
+stoppages, fires, accidents, acts of civil or military authority including governmental laws, embargoes, orders, priorities, or regulations, delay in transportation, shortages, delay by suppliers of materials,
+acts of the Purchaser, or any other causes whatsoever beyond the reasonable control of Doosan. Acceptance of delivery shall constitute a waiver of all claims for damages by reason of delay in deliveries.
+                </span><br/>
+                <span>
+                    8. TAXES Unless otherwise stated, the Purchaser shall pay all VAT, sales and other taxes and levies of whatever nature chargeable on the purchase price of the Equipment.
+                </span><br/>
+                <span>
+                    9. PAYMENT (a) The Purchaser agrees that it shall make no deduction or set-off against sums due to Doosan for the sale of the Equipment to the Purchaser unless Doosan has issued a credit note in the
+amount of such deduction or set-off. (b) Payment must be made in the currency reflected on the invoice.
+                </span><br/>
+                <span>
+                    10. SPECIFICATIONS AND IMPROVEMENTS Unless expressly otherwise provided, Doosan’s specifications concerning the Equipment are subject to change by Doosan in the course of manufacture
+without notice to the Purchaser. It is Doosan’s policy to constantly strive to improve its Equipment. Doosan, therefore, reserves the right to make changes in design, and other changes, whenever Doosan
+believes its Equipment will be improved thereby, but without any obligation to incorporate such changes retroactively.
+                </span><br/>
+                <span>
+                    11. WARRANTY (a) Unless otherwise specified in writing by Doosan, the maximum warranty on the Equipment(s) sold is eighteen (18) months from the date of shipment to the distributor. If a machine is
+retailed within six (6) months from the date of shipment to the distributor, Doosan, through the distributor, warrants that the Equipment sold by it will be free of defects in material and workmanship for a
+period of twelve (12) months from the date of delivery to the end user or the applicable number of operating hours for the specific Equipment whichever first occurs. If the Equipment is retailed after more
+than six (6) months from the shipment date, the remaining manufacturer warranty coverage will decrease proportionally, (b) in the event Doosan makes a direct sale to an end user, the warranty period
+over the Equipment will constitute a maximum twelve (12) month as from the date of delivery to that end user, (c) Doosan further warrants that each new spare part sold by it will be free of defects in
+material and workmanship for a period of six (6) months from the date of delivery to the end user. Doosan will provide a new part or repaired part, at its election, in place of any part which is found upon its
+inspection to be defective in material and workmanship during the period described above. At the option of Doosan, such part will be repaired or replaced without charge to the end user. End user must
+present proof of purchase (and purchase date) at the time of making a claim under this warranty. This warranty does not apply to failures occurring as a result of abuse, misuse, negligent repairs, corrosion,
+erosion, normal wear and tear, alterations and modifications made to the Equipment without express written consent of Doosan, or failure to follow the recommended operating practices, services and
+maintenance procedures as provided in the Equipment’s operating and maintenance publications. All maintenance, service and repair work must be completed by an authorized distributor of Doosan or
+other approved establishment and only genuine Doosan approved parts shall be used in such work. Failure to comply strictly with these requirements shall invalidate this warranty. (c) Unless otherwise
+stated in the warranty documentation, the warranty provided herein does not apply to tires, engines, motors or any other accessories not manufactured by Doosan. The owner shall rely solely on the
+warranty, if any, provided by the respective manufacturers thereof. (d) DOOSAN EXCLUDES OTHER CONDITIONS, WARRANTIES OR REPRESENTATIONS OF ALL KINDS, EXPRESSED OR IM-
+PLIED,
+STATUTORY OR OTHERWISE (EXCEPT THAT OF TITLE) INCLUDING ALL IMPLIED WARRANTIES AND CONDITIONS RELATING TO MERCHANTABILITY, SATISFACTORY QUALITY AND
+FITNESS FOR A PARTICULAR PURPOSE. (e) CORRECTIONS BY DOOSAN OF NON-CONFORMITIES WHETHER PATENT OR LATENT, IN THE MANNER AND FOR THE TIME PERIOD PRO-
+VIDED
+ABOVE, SHALL CONSTITUTE FULFILMENT OF ALL LIABILITIES OF DOOSAN FOR SUCH NONCONFORMITIES, WHETHER BASED ON CONTRACT, WARRANTY, TORT, NEGLIGENCE,
+INDEMNITY, STRICT LIABILITY OR OTHERWISE WITH RESPECT TO OR ARISING OUT OF SUCH EQUIPMENT.
+                </span><br/>
+                <span>
+                    12. LIMITATION OF LIABILITY (a) PROVIDED THAT NOTHING IN THE CONTRACT WILL EXCLUDE OR LIMIT DOOSAN’S (OR ITS AFFILIATED COMPANIES) LIABILITY FOR FRAUD,
+DAMAGES
+FOR WILLFUL MISCONDUCT OR GROSS NEGLIGENCE OR FOR DEATH OR PERSONAL INJURY CAUSED BY ITS NEGLIGENCE, DOOSAN (OR ITS AFFILIATED COMPANIES) WILL NOT BE
+LIABLE TO THE PURCHASER UNDER OR IN CONNECTION WITH THE CONTRACT OR ANY COLLATERAL CONTRACT FOR ANY LOSS OF PROFIT, LOSS OF INCOME OR CONTRACT, LOSS
+OF GOODWILL, OR FOR INDIRECT OR CONSEQUENTIAL LOSS OR DAMAGE OF ANY KIND WHATSOEVER, WHETHER BASED ON OR ARISING IN TORT (INCLUDING NEGLIGENCE),
+BREACH
+OF CONTRACT OR OTHERWISE. (b) WITHOUT PREJUDICE TO ARTICLE 12 (a), AND NOTWITHSTANDING THE UNENFORCEABILITY OR INVALIDITY OF ANY OTHER PROVISION OF
+THE
+CONTRACT, DOOSAN’S (OR AFFILIATED COMPANIES) MAXIMUM LIABILITY FOR, UNDER OR IN CONNECTION WITH THE CONTRACT, WHETHER IN CONTRACT, TORT OR OTHER-
+WISE
+SHALL NOT EXCEED, IN RESPECT OF EACH EVENT OR SERIES OF CONNECTED EVENTS, THE PURCHASE PRICE OF THE EQUIPMENT UPON WHICH SUCH LIABILITY IS BASED. (c)
+Neither
+the Purchaser nor any affiliated company or assignee shall have the right to compensation unless expressly otherwise provided. (d) The provisions of this Article 12 shall survive the termination of the
+Contract.
+                </span><br/>
+                <span>13. COMPLIANCE Purchaser shall comply with all applicable laws and regulations including but not limited to anti-corruption, anti-money laundering, anti-terrorism, export control, economic sanction and
+anti-boycott laws, regulations and administrative requirements applicable to Purchaser or its services. Purchaser will not, nor shall it permit any of its sub-purchaser to, sell, resell, export, re-export,
+distribute, transfer, or dispose of the Equipment either directly or indirectly to persons or territories prohibited by the export control or sanctions laws of the United States of America, European Union or
+other applicable jurisdictions.</span><br/>
+                <span>
+                    14. VIOLATIONS OF LAW Doosan shall not be bound by or required to adhere to any term or provision of a purchase order, quotation, bid, letter of credit or like document or any provision of law regulation
+or custom, which would cause Doosan, its parent or any of its affiliates to be in violation of or fail to comply with the export control laws, sanctions laws, taxing statutes or regulations of the country wherein
+the Equipment is manufactured or from which it is exported or of which it is otherwise subject to jurisdiction.
+                </span><br/>
+                <span>
+                    15. NUCLEAR LIABILITY In the event that the Equipment sold hereunder is to be used in a nuclear facility, the Purchaser and/or owner of the facility hereby releases and agrees to indemnify Doosan and
+its suppliers for any nuclear damage, occurring on site or off-site, including loss of use, in any manner arising out of a nuclear incident, whether alleged to be due in whole or in part to the negligence or
+otherwise of Doosan or its suppliers.
+                </span><br/>
+                <span>
+                    16. ELECTRONIC ORDER ENTRY In the event that the Contract is made through Doosan’s electronic order entry system (the “System”), the following conditions shall apply: (a) Use of the System may
+require Doosan to set up user password(s) and/or other security protection measures. The Purchaser agrees to keep secret its user password and such protection measures (if any) and not to disclose
+the same to anyone not authorized to access the System. The Purchaser shall be liable to Doosan for any unauthorized access to or use of the System. (b) All information disclosed to the Purchaser
+through access to and use of the System is Confidential Information and shall not be disclosed to any third party not authorized by Doosan to receive it.
+                </span><br/>
+                <span>
+                    17. DATA PRIVACY To the extent that information provided to Doosan by the Purchaser contains personal data, such personal data will be processed in accordance with Doosan Privacy Policy which is
+compliant with the General Data Protection Regulation (GDPR, EU Regulation 2016/679). Doosan’s Privacy Policy is available on the website https://www.bobcat.com/eu/en/company-info/privacy-policy
+                </span><br/>
+                <span>
+                    18. GOVERNING LAW AND JURISDICTION (a) This Contract shall be governed by the laws of Czech Republic with the express exclusion of the United Nations Convention on Contracts for the
+International Sale of Goods (Vienna Convention of 1980). (b) Any dispute, controversy or claim arising out of or relating to this Contract, or the breach, termination or invalidity thereof, shall be finally
+settled under the Rules of Arbitration of the International Chamber of Commerce by one or more arbitrators appointed in accordance with the said Rules. The seat of arbitration shall be Prague, Czech Republic.
+The language to be used in the arbitral proceedings shall be English.
+                </span><br/>
+                <span>19. LANGUAGE. These Terms &amp; Conditions are in English but Doosan, at its own discretion, may make available translations in other languages. In case of discrepancies between the translation and the
+English version, the English version shall always prevail.
+                </span><br/>
+                <span>
+                    20. NOTICES. All formal notices or communications in connection with this Contract shall be in English.
+                </span><br/>
+
+        </div>
+            <div style="font-size:9px;">
+                <span>1. GENERAL (a) The Terms and Conditions of Sale outlined herein (hereinafter referred to as “the T&amp;C”) shall apply to the sale by Doosan Bobcat EMEA s.r.o. (hereinafter referred to as “Doosan”) to the
+                            person, firm or company to whom Doosan’s offer is made (hereinafter referred to as “the Purchaser”) of products, equipment and parts relating thereto (hereinafter referred to as “the Equipment”). T&amp;C
+                            together with sales order constitutes a contract (hereinafter referred to as “the Contract”) (b) In the event of a conflict between the T&amp;C and any distributor agreement between Doosan and the Purchaser
+                            or any other sales contract between Doosan and the Purchaser as the case may be, the terms of the distributor agreement or other purchase contract shall prevail. (c) Unless otherwise agreed in writing
+                            by Doosan, it shall be understood that Doosan proceeding with any sale shall be in accordance with the terms and conditions outlined herein. THESE TERMS AND CONDITIONS SHALL PREVAIL OVER
+                            ANY TERMS PUT FORWARD BY THE PURCHASER, UNLESS DOOSAN AGREES TO THEM EXPRESSLY IN WRITING. NO CONDUCT BY DOOSAN SHALL BE DEEMED TO CONSTITUTE
+                            ACCEPTANCE OF ANY TERMS PUT FORWARD BY THE PURCHASER.</span><br/>
+                <span>
+                    2. PRICE AND PAYMENT (a) Unless otherwise agreed in writing between the parties, the terms of payment are net cash in advance. All prices may be varied by Doosan at any time upon thirty (30) days’
+                        notice, and the new price shall be applicable to all orders placed after the new price has entered into force. (b) Unless otherwise stated, all prices are EXW Incoterms®2020 at Doosan’s designated
+                        warehouse. Prices do not include the cost of special packaging, insurance, foreign taxes or duties, or any other charges which may be applicable to the export or import of the Equipment. If an Incoterms
+                        other than EXW is agreed, a further incremental charge shall be added to the Equipment price to cover the extra cost. Any such extra costs shall be reflected in the invoice sent to the Purchaser. (c) Doosan
+                        reserves the right to charge, without prior notice, interest at the annual rate of 5 (five) percent over EURIBOR 1 month (Euro Interbank Offered Rate) on all overdue accounts, such interest shall accrue on
+                        a day to day basis and will be charged in the same currency as the overdue amount. (d) If payment is agreed to be made by installments, in the event of default in payment of any one installment, all other
+                        sums payable under the Contract shall become immediately due and payable. (e) Any error of any kind whatsoever in any invoice of Doosan shall be notified to Doosan within seven (7) days of receipt of
+                        such invoice by the Purchaser. Failure to notify as herein required shall mean that the Purchaser is deemed to accept that the invoice is correct in all respects.
+                </span><br/>
+                <span>
+                    3. TITLE It is expressly agreed that the Equipment delivered remain the sole property of Doosan until complete payment for that Equipment has been received by Doosan. Only at this time will title of
+ownership pass to the Purchaser.
+                </span><br/>
+                <span>
+                    4. RISK Notwithstanding that the ownership of the Equipment may not have passed to the Purchaser as provided for in Article 3, the risk of loss in the Equipment shall pass to the Purchaser at the time of
+delivery to the Purchaser, its agent or any carrier in accordance with EXW Incoterms®2020, unless another Incoterms® has been agreed between the parties in writing.
+                </span><br/>
+                <span>
+                    5. ASSIGNMENT The Contract may not be assigned or transferred by the Purchaser without the prior written consent of Doosan. Doosan may assign or transfer the Contract without the necessity of
+consent.
+                </span><br/>
+                <span>
+                    6. SHIPMENT (a) Except if otherwise mentioned on any document issued by Doosan (order acknowledgement, invoice, or other), all shipments are made EXW Incoterms®2020 at Doosan’s designated
+warehouse. Unless agreed with the Purchaser, Doosan shall select the method of transportation, including place of storage, if necessary, in accordance with the shipping conditions current at time of or
+during shipment. Upon the Purchaser’s written request, Doosan will arrange to obtain ocean freight space, relevant insurances (which shall include standard warehouse to warehouse coverage), and
+forwarder’s services. All such charges shall be payable by the Purchaser. (b) All shipments are made for the Purchaser’s account. If shipments are delayed because of delayed payments or insufficient or
+delayed shipping instructions from the Purchaser, the Purchaser shall be charged for storage costs beginning immediately after Doosan’s notice that the Equipment ordered is ready for shipment and, if
+the Equipment is stored in Doosan’s factory, for not less than one per cent per month of the amount invoiced. (c) Partial shipments may be made and payments therefore shall become due in accordance
+with the terms hereof, as shipments are made and invoices raised. (d) Claims for shortages must be made by the Purchaser within two (2) days of receipt of goods.
+                </span><br/>
+                <span>
+                    7. DELIVERY AND DELAYS Shipment dates are understood to be estimated and in no event shall such dates be construed as falling within the meaning of “time is of the essence” or other broadly similar
+concepts having the same legal effect. Doosan shall not be liable for loss, damage, detention, delay or completion of an order due to acts of God, acts of terrorism, war, riots, civil insurrection, strikes, work
+stoppages, fires, accidents, acts of civil or military authority including governmental laws, embargoes, orders, priorities, or regulations, delay in transportation, shortages, delay by suppliers of materials,
+acts of the Purchaser, or any other causes whatsoever beyond the reasonable control of Doosan. Acceptance of delivery shall constitute a waiver of all claims for damages by reason of delay in deliveries.
+                </span><br/>
+                <span>
+                    8. TAXES Unless otherwise stated, the Purchaser shall pay all VAT, sales and other taxes and levies of whatever nature chargeable on the purchase price of the Equipment.
+                </span><br/>
+                <span>
+                    9. PAYMENT (a) The Purchaser agrees that it shall make no deduction or set-off against sums due to Doosan for the sale of the Equipment to the Purchaser unless Doosan has issued a credit note in the
+amount of such deduction or set-off. (b) Payment must be made in the currency reflected on the invoice.
+                </span><br/>
+                <span>
+                    10. SPECIFICATIONS AND IMPROVEMENTS Unless expressly otherwise provided, Doosan’s specifications concerning the Equipment are subject to change by Doosan in the course of manufacture
+without notice to the Purchaser. It is Doosan’s policy to constantly strive to improve its Equipment. Doosan, therefore, reserves the right to make changes in design, and other changes, whenever Doosan
+believes its Equipment will be improved thereby, but without any obligation to incorporate such changes retroactively.
+                </span><br/>
+                <span>
+                    11. WARRANTY (a) Unless otherwise specified in writing by Doosan, the maximum warranty on the Equipment(s) sold is eighteen (18) months from the date of shipment to the distributor. If a machine is
+retailed within six (6) months from the date of shipment to the distributor, Doosan, through the distributor, warrants that the Equipment sold by it will be free of defects in material and workmanship for a
+period of twelve (12) months from the date of delivery to the end user or the applicable number of operating hours for the specific Equipment whichever first occurs. If the Equipment is retailed after more
+than six (6) months from the shipment date, the remaining manufacturer warranty coverage will decrease proportionally, (b) in the event Doosan makes a direct sale to an end user, the warranty period
+over the Equipment will constitute a maximum twelve (12) month as from the date of delivery to that end user, (c) Doosan further warrants that each new spare part sold by it will be free of defects in
+material and workmanship for a period of six (6) months from the date of delivery to the end user. Doosan will provide a new part or repaired part, at its election, in place of any part which is found upon its
+inspection to be defective in material and workmanship during the period described above. At the option of Doosan, such part will be repaired or replaced without charge to the end user. End user must
+present proof of purchase (and purchase date) at the time of making a claim under this warranty. This warranty does not apply to failures occurring as a result of abuse, misuse, negligent repairs, corrosion,
+erosion, normal wear and tear, alterations and modifications made to the Equipment without express written consent of Doosan, or failure to follow the recommended operating practices, services and
+maintenance procedures as provided in the Equipment’s operating and maintenance publications. All maintenance, service and repair work must be completed by an authorized distributor of Doosan or
+other approved establishment and only genuine Doosan approved parts shall be used in such work. Failure to comply strictly with these requirements shall invalidate this warranty. (c) Unless otherwise
+stated in the warranty documentation, the warranty provided herein does not apply to tires, engines, motors or any other accessories not manufactured by Doosan. The owner shall rely solely on the
+warranty, if any, provided by the respective manufacturers thereof. (d) DOOSAN EXCLUDES OTHER CONDITIONS, WARRANTIES OR REPRESENTATIONS OF ALL KINDS, EXPRESSED OR IM-
+PLIED,
+STATUTORY OR OTHERWISE (EXCEPT THAT OF TITLE) INCLUDING ALL IMPLIED WARRANTIES AND CONDITIONS RELATING TO MERCHANTABILITY, SATISFACTORY QUALITY AND
+FITNESS FOR A PARTICULAR PURPOSE. (e) CORRECTIONS BY DOOSAN OF NON-CONFORMITIES WHETHER PATENT OR LATENT, IN THE MANNER AND FOR THE TIME PERIOD PRO-
+VIDED
+ABOVE, SHALL CONSTITUTE FULFILMENT OF ALL LIABILITIES OF DOOSAN FOR SUCH NONCONFORMITIES, WHETHER BASED ON CONTRACT, WARRANTY, TORT, NEGLIGENCE,
+INDEMNITY, STRICT LIABILITY OR OTHERWISE WITH RESPECT TO OR ARISING OUT OF SUCH EQUIPMENT.
+                </span><br/>
+                <span>
+                    12. LIMITATION OF LIABILITY (a) PROVIDED THAT NOTHING IN THE CONTRACT WILL EXCLUDE OR LIMIT DOOSAN’S (OR ITS AFFILIATED COMPANIES) LIABILITY FOR FRAUD,
+DAMAGES
+FOR WILLFUL MISCONDUCT OR GROSS NEGLIGENCE OR FOR DEATH OR PERSONAL INJURY CAUSED BY ITS NEGLIGENCE, DOOSAN (OR ITS AFFILIATED COMPANIES) WILL NOT BE
+LIABLE TO THE PURCHASER UNDER OR IN CONNECTION WITH THE CONTRACT OR ANY COLLATERAL CONTRACT FOR ANY LOSS OF PROFIT, LOSS OF INCOME OR CONTRACT, LOSS
+OF GOODWILL, OR FOR INDIRECT OR CONSEQUENTIAL LOSS OR DAMAGE OF ANY KIND WHATSOEVER, WHETHER BASED ON OR ARISING IN TORT (INCLUDING NEGLIGENCE),
+BREACH
+OF CONTRACT OR OTHERWISE. (b) WITHOUT PREJUDICE TO ARTICLE 12 (a), AND NOTWITHSTANDING THE UNENFORCEABILITY OR INVALIDITY OF ANY OTHER PROVISION OF
+THE
+CONTRACT, DOOSAN’S (OR AFFILIATED COMPANIES) MAXIMUM LIABILITY FOR, UNDER OR IN CONNECTION WITH THE CONTRACT, WHETHER IN CONTRACT, TORT OR OTHER-
+WISE
+SHALL NOT EXCEED, IN RESPECT OF EACH EVENT OR SERIES OF CONNECTED EVENTS, THE PURCHASE PRICE OF THE EQUIPMENT UPON WHICH SUCH LIABILITY IS BASED. (c)
+Neither
+the Purchaser nor any affiliated company or assignee shall have the right to compensation unless expressly otherwise provided. (d) The provisions of this Article 12 shall survive the termination of the
+Contract.
+                </span><br/>
+                <span>13. COMPLIANCE Purchaser shall comply with all applicable laws and regulations including but not limited to anti-corruption, anti-money laundering, anti-terrorism, export control, economic sanction and
+anti-boycott laws, regulations and administrative requirements applicable to Purchaser or its services. Purchaser will not, nor shall it permit any of its sub-purchaser to, sell, resell, export, re-export,
+distribute, transfer, or dispose of the Equipment either directly or indirectly to persons or territories prohibited by the export control or sanctions laws of the United States of America, European Union or
+other applicable jurisdictions.</span><br/>
+                <span>
+                    14. VIOLATIONS OF LAW Doosan shall not be bound by or required to adhere to any term or provision of a purchase order, quotation, bid, letter of credit or like document or any provision of law regulation
+or custom, which would cause Doosan, its parent or any of its affiliates to be in violation of or fail to comply with the export control laws, sanctions laws, taxing statutes or regulations of the country wherein
+the Equipment is manufactured or from which it is exported or of which it is otherwise subject to jurisdiction.
+                </span><br/>
+                <span>
+                    15. NUCLEAR LIABILITY In the event that the Equipment sold hereunder is to be used in a nuclear facility, the Purchaser and/or owner of the facility hereby releases and agrees to indemnify Doosan and
+its suppliers for any nuclear damage, occurring on site or off-site, including loss of use, in any manner arising out of a nuclear incident, whether alleged to be due in whole or in part to the negligence or
+otherwise of Doosan or its suppliers.
+                </span><br/>
+                <span>
+                    16. ELECTRONIC ORDER ENTRY In the event that the Contract is made through Doosan’s electronic order entry system (the “System”), the following conditions shall apply: (a) Use of the System may
+require Doosan to set up user password(s) and/or other security protection measures. The Purchaser agrees to keep secret its user password and such protection measures (if any) and not to disclose
+the same to anyone not authorized to access the System. The Purchaser shall be liable to Doosan for any unauthorized access to or use of the System. (b) All information disclosed to the Purchaser
+through access to and use of the System is Confidential Information and shall not be disclosed to any third party not authorized by Doosan to receive it.
+                </span><br/>
+                <span>
+                    17. DATA PRIVACY To the extent that information provided to Doosan by the Purchaser contains personal data, such personal data will be processed in accordance with Doosan Privacy Policy which is
+compliant with the General Data Protection Regulation (GDPR, EU Regulation 2016/679). Doosan’s Privacy Policy is available on the website https://www.bobcat.com/eu/en/company-info/privacy-policy
+                </span><br/>
+                <span>
+                    18. GOVERNING LAW AND JURISDICTION (a) This Contract shall be governed by the laws of Czech Republic with the express exclusion of the United Nations Convention on Contracts for the
+International Sale of Goods (Vienna Convention of 1980). (b) Any dispute, controversy or claim arising out of or relating to this Contract, or the breach, termination or invalidity thereof, shall be finally
+settled under the Rules of Arbitration of the International Chamber of Commerce by one or more arbitrators appointed in accordance with the said Rules. The seat of arbitration shall be Prague, Czech Republic.
+The language to be used in the arbitral proceedings shall be English.
+                </span><br/>
+                <span>19. LANGUAGE. These Terms &amp; Conditions are in English but Doosan, at its own discretion, may make available translations in other languages. In case of discrepancies between the translation and the
+English version, the English version shall always prevail.
+                </span><br/>
+                <span>
+                    20. NOTICES. All formal notices or communications in connection with this Contract shall be in English.
+                </span><br/>
+            </div>
+            </div>
+        </t>
+    </template>
+</odoo>

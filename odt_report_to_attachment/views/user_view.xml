@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="res_view_inherit_sighn" model="ir.ui.view">
+        <field name="name">res.user.view.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="hr.res_users_view_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Signature">
+                    <group string="Digital Signatures" name="sign">
+                    <field name="sign_signature" widget="signature" options="{'full_name': 'display_name', 'size': ['',200]}"/>
+<!--                    <field name="sign_initials" widget="signature" options="{'size': [200,'']}"/>-->
+                </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="res_view_inherit_sighn_view" model="ir.ui.view">
+        <field name="name">res.user.view.inherit_sign</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="sign.res_users_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sign']" position="attributes">
+        <attribute name="groups"></attribute>
+            </xpath>
+        </field>
+    </record>
+</data>
+</odoo>

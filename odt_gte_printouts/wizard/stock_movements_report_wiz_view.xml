@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock_movements_reports_form" model="ir.ui.view">
+            <field name="name">stock.movements.report.wiz.form</field>
+            <field name="model">stock.movements.report.wiz</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <label for="date_from" string="Date"/>
+                            <div class="o_row">
+                                <field name="date_from" required="1"/>To
+                                <field name="date_to" required="1"/>
+                            </div>
+                            <field name="product_mrp_type_id"/>
+                            <field name="categ_id" widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name="branch_id" widget="many2many_tags"/>
+                            <field name="product_id" widget="many2many_tags"/>
+                            <field name="product_tag_id" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="print_report_xlsx" string="Print Xlsx" type="object" class="oe_highlight"/>
+                        <button name="print_report" string="Print PDF" type="object" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel" class="btn-default"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="stock_movements_report_action">
+            <field name="name">Stock Movements Report</field>
+            <field name="res_model">stock.movements.report.wiz</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem id="stock_movements_report_menu" parent="stock.menu_warehouse_report" name="Stock Movements Report"
+                  action="stock_movements_report_action"/>
+    </data>
+</odoo>

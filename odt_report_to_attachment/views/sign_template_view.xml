@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="sign_template_form_inherit" model="ir.ui.view">
+            <field name="name">sign.template.form</field>
+            <field name="model">sign.template</field>
+            <field name="inherit_id" ref="sign.sign_template_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="is_document_added" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="sign_template_kanban_inherit" model="ir.ui.view">
+            <field name="name">sign.template.kanban</field>
+            <field name="model">sign.template</field>
+            <field name="inherit_id" ref="sign.sign_template_view_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//templates/div/div[hasclass('o_kanban_record_body')]" position="inside">
+                    <field name="is_document_added" invisible="1"/>
+                    <img attrs="{'invisible': [('is_document_added', '!=', True)]}"
+                         src="/odt_sign_extend/static/src/tik.png"
+                         class="o_kanban_image float-right"
+                    />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

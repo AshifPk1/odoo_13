@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="report_stock_view">
+            <t t-call="web.html_container">
+            <t t-call="odt_gte_printouts.external_layout_standard_stock_picking">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="padding-top:70px">
+                    <div class="row">
+                        <div class="col-9">
+                            <table style="width:100%;border-right: 1px solid black;">
+                                <tr>
+                                    <td class="text-right" style="font-size:12px"><span t-field="doc.date_done"/></td>
+                                    <td class="text-center" style="font-size:12px;color:#B22203">‫تاريخ‬ ‫التسليم‬ ‫او‬ ‫الوصول‬<br/>:Delivery Date
+                                    </td>
+                                    <td class="text-right" style="font-size:12px"><span t-field="doc.customer_order_number"/>
+                                    </td>
+                                    <td class="text-right" style="font-size:12px;color:#B22203">‫رقم‬ ‫طلب‬ ‫العميل‬<br/>:Customer Order Number</td>
+                                    <td class="text-right" style="font-size:12px"><span t-field="doc.partner_id.customer_sequence"/></td>
+                                    <td class="text-right"  style="padding-right:4px;font-size:12px;color:#B22203">‫‫رمز العميل<br/>: CustomerCode</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-bottom:10px">
+                                        <span style="font-size:12px;color:#B22203">Debited to</span>
+                                        <br/>
+                                       <b> <span style="font-size:13px;" t-field="doc.partner_id.name_en">
+                                        </span></b>
+                                        <br/>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.street"/>,<span style="font-size:12px;" t-field="doc.partner_id.street2"/>, <span style="font-size:12px;" t-field="doc.partner_id.city"/><br/>
+                                            Tel: <span style="font-size:12px;" t-field="doc.partner_id.phone"/><br/>
+
+                                    </td>
+                                    <td class="text-right"  style="padding-right:4px" colspan="3">
+                                        <span style="font-size:12px;color:#B22203">مدين ل</span>
+                                        <br/>
+                                       <b> <span style="font-size:13px;" t-field="doc.partner_id.name_ar">
+                                        </span></b>
+                                        <br/>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.street_1"/>,<span style="font-size:12px;" t-field="doc.partner_id.street_2"/>, <span style="font-size:12px;" t-field="doc.partner_id.city_arabic"/><br/>
+                                            ‫هاتف‬: <span style="font-size:12px;" t-field="doc.partner_id.phone_arabic"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span style="font-size:12px;color:#B22203">CR :</span>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.com_register"/>/
+                                        <span style="font-size:12px;color:#B22203">VAT :</span>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.vat"/>
+                                    </td>
+                                   <td colspan="3" class="text-right" style="padding-right:4px">
+                                        <span style="font-size:12px;" t-field="doc.partner_id.com_register"/>
+                                        <span style="font-size:12px;color:#B22203">‫القيمة ‫المضافة:</span>
+                                        <span style="font-size:12px;" t-field="doc.partner_id.vat"/>/
+                                        <span style="font-size:12px;color:#B22203"> ‫س‬.‫ت‬:‫‬</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                         <div class="col-3 text-center">
+                                 <b><span style="font-size:14px;color:#B22203">رقم ‫مذ‫كرة‬ ‫ا‬‫لتسليم‬</span></b><br/>
+                                <span style="font-size:14px;color:#B22203"><b>DELIVERY NOTE NUMBER :</b></span><br/>
+                                <b><span style="font-size:14px;" t-field="doc.name"/></b><br/>
+                                <b><span style="font-size:14px;color:#B22203">(DATE)التاريخ</span></b><br/>
+                                <b><span style="font-size:14px;" t-field="doc.scheduled_date"/></b><br/>
+                                <b><span style="font-size:14px;color:#B22203"># ر‫قم‬ ‫طلب‬ ‫ا‬‫لشر‬‫ا‬‫ء‬(.P.O)</span></b><br/>
+                                 <b><span style="font-size:14px;" t-field="doc.purchase_id.name"/></b>
+                            </div>
+                    </div><br/>
+                    <table class="table table-sm o_main_table" name="invoice_line_table"
+                           style="border: 1px solid black;font-size:13px;">
+                        <thead>
+                            <tr style="color:white;background-color:#B22203;border-top:2px solid black;">
+                                <t t-set="colspan" t-value="6"/>
+                                <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                    <span>‫رقم‬<br/>No.
+                                    </span>
+                                </th>
+                                <th width="10%" style="padding:0px;border: 1px solid black;" bgcolor="#B22203" name="th_sku" class="text-center">
+                                    <span>التسلسل<br/>SKU #
+                                    </span>
+                                </th>
+                                <th width="25%" style="padding:0px;border: 1px solid black;" name="th_description" class="text-center">
+                                    <span>الوصف<br/>DESCRIPTION
+                                    </span>
+                                </th>
+                                <th width="13%" style="padding:0px" name="th_priceunit" class="text-center ">
+                                    <span>الوحده<br/>Unit
+                                    </span>
+                                </th>
+                                <th width="8%" style="padding:0px;border: 1px solid black;" name="th_quantity" class="text-center">
+                                    <span>الكميه<br/>QTY
+                                    </span>
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <t t-set="sl_no" t-value="1" />
+                            <t t-foreach="doc.move_ids_without_package.sorted(key=lambda m: m.product_id.id)" t-as="line">
+                                <tr>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-esc="sl_no"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center" name="account_invoice_line_name">
+                                            <span t-field="line.product_id.default_code"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-field="line.product_id"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-field="line.product_uom"/>
+                                        </td>
+                                        <td style="border: 1px solid black;" class="text-center">
+                                            <span t-field="line.product_uom_qty"/>
+                                        </td>
+                                        <t t-set="sl_no" t-value="sl_no+1" />
+                                </tr>
+                            </t>
+
+                        </tbody>
+                    </table>
+                        <br/>
+                        <br/>
+                        <br/>
+                    <div>
+                        <span style="color:#B22203;padding-left:4px">ملحوظة(Note)</span></div>
+                            <br/>
+                    <div class="text-center">
+                        <span style="padding-left:7px;padding-right:7px">يجب أبلاغنا بأي نقص أو ضرر في غضون 72 ساعة من استلام البضائع،ولا يمكن إرجاع أي بضائع بدون إذن مسبق من الشركة</span>
+                        <br/>
+                        <span style="padding-left:4px;padding-right:4px;font-size: 12px"> Any shortage or damage must be notified within 72 hours of receipt of goods. No goods may be return without prior authorisation from company </span>
+
+                    </div><br/><br/>
+                    <div style="padding-bottom:16px">
+                            <table width="100%" >
+                                <tr>
+                                    <td class="text-center" style="border-bottom: 1px solid black;">
+                                        <span t-field="doc.sale_id.user_id"/>
+                                    </td>
+                                    <td width="2%"></td>
+                                    <td class="text-center" style="border-bottom: 1px solid black;">
+                                    </td>
+                                    <td width="2%"></td>
+                                    <td class="text-center" style="border-bottom: 1px solid black;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <span style="color:#B22203">بائع(Salesman)</span>
+                                    </td>
+                                    <td width="2%"></td>
+                                    <td class="text-center">
+                                        <span style="color:#B22203">‫سلمت‬ ‫بو‬‫ا‬‫سطة‬(Delivered By)</span>
+                                    </td>
+                                    <td width="2%"></td>
+                                    <td class="text-center">
+                                        <span style="color:#B22203">استلمت من قبل(Received by)</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            </t>
+            </t>
+        </t>
+    </template>
+</odoo>

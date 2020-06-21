@@ -1,2 +1,3 @@
+from . import model
 from . import helpdesk
-from . import users
+from . import project_task

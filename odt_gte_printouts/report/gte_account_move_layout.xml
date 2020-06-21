@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="external_layout_standard">
+        <div class="header">
+            <t t-if="not o" t-set="o" t-value="docs"/>
+            <div class="row" style="margin-right:-20px">
+                <div class="col-8" style="margin-top:10px;">
+                    <img t-att-src="'/odt_gte_printouts/static/src/img/gte logo.png'"
+                         style="max-height:80px;margin-left:-10px;"/>
+                </div>
+                <div class="col-1">
+                </div>
+                <t t-if="o.type == 'out_invoice'">
+                    <t t-if="o.print == 'cash_invoice'">
+                        <div class="col-3"
+                         style="color:white;background-color:black;font-size: 25px;font-weight: 800;text-align:center;margin-bottom:18px;">
+                        <span>‫‫فاتورة‬‬ ‫‫نقدية‬‬</span>
+                        <br/>
+                        <span>CASH INVOICE</span>
+                        </div>
+                </t>
+                <t t-else="o.print == 'credit_invoice'">
+                        <div class="col-3"
+                     style="color:white;background-color:black;font-size: 25px;font-weight: 800;text-align:center;margin-bottom:18px;">
+                    <span>‫‫فاتورة الائتمان‬‬‬‬</span>
+                    <br/>
+                    <span>CREDIT INVOICE</span>
+                </div>
+                </t>
+                </t>
+                <t t-if="o.type == 'out_refund'">
+                    <div class="col-3"
+                     style="color:white;background-color:black;font-size: 25px;font-weight: 800;text-align:center;margin-bottom:18px;">
+                    <span>‫اشعار دائن‬</span>
+                    <br/>
+                    <span>CREDIT NOTE</span>
+                </div>
+                </t>
+                <t t-if="o.type == 'in_refund'">
+                    <div class="col-3"
+                     style="color:white;background-color:black;font-size: 25px;font-weight: 800;text-align:center;margin-bottom:18px;">
+                    <span>‫بيان بالخصم‬</span>
+                    <br/>
+                    <span>DEBIT NOTE</span>
+                </div>
+                </t>
+            </div>
+            <div class="row" style="padding-top:10px;padding-bottom:-5px">
+                <div style="font-size: 11px;width:30%;padding-left:10px">
+                    <span t-field="o.company_id.street"/>,<span t-field="o.company_id.street2"/>,
+                    <span t-field="o.company_id.city"/>,<span t-field="o.company_id.country_id"/>,Tel:<span t-field="o.company_id.phone"/><br/>
+                    CR:<span t-field="o.company_id.company_registry"/>/ VAT # <span t-field="o.company_id.vat"/>
+                </div>
+                <div style="font-size: 12px;width:10%"/>
+                <div style="font-size: 11px;width:30%;padding-right:10px">
+                    <span t-field="o.company_id.street_1"/>,<span t-field="o.company_id.street_2"/>,
+                    <span t-field="o.company_id.city_arabic"/>,<span t-field="o.company_id.country_arabic"/>,<span t-field="o.company_id.phone_arabic"/>:ص <br/>
+                    المضافةالقيمة:<span t-field="o.company_id.vat"/>/
+                    ت.س:<span t-field="o.company_id.company_registry"/>
+
+                </div>
+                <div style="font-size: 12px;width:10%"/>
+                <div style="width:20%;margin-top:-20px;padding-bottom:-20px">
+                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)"
+                         style="width:120%;height:50px;margin-left:-40px;"/>
+                    <center>
+                        <span style="font-size: 10px;margin-left:-40px;" t-esc="o.name"/>
+                    </center>
+                </div>
+            </div>
+            <hr style="height:5px; border:none; background-color:#B22203;padding-left:-10px;margin-right:-20px;margin-left:-20px;margin-top:4px;"/>
+
+        </div>
+        <div class="article">
+            <t t-raw="0" />
+        </div>
+        <div class="footer">
+            <table style="width:100%;margin-left:-15px">
+                <tr>
+                    <td colspan="3">
+                        <img t-att-src="'/odt_gte_printouts/static/src/img/brands.png'"
+                             style="max-height: 58px;padding-top: -8px;padding-bottom: -14px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="color:white;background-color:#B22203;">&#160;&#160;&#160;&#160;&#160;</td>
+                </tr>
+                <tr style="color:white;background-color:black;font-size: 25px;font-weight: 800;text-align:center">
+                    <td >TEL: 920003001</td>
+                    <td >WWW.GTE.SA</td>
+                    <td >EMAIL: rv@gte.sa</td>
+                </tr>
+                <t t-if="o.type == 'out_invoice'">
+                        <t t-if="o.print == 'cash_invoice'">
+                            <tr  style="color:white;background-color:black;font-size: 13px;font-weight: 800;text-align:left;">
+                                <td colspan="3" style="padding-bottom: 40px;" >GTE Docs. Cash Invoice(ver.<span t-field="o.invoice_date"/>)</td>
+                            </tr></t>
+                        <t t-else="o.print == 'credit_invoice'">
+                            <tr style="color:white;background-color:black;font-size: 13px;font-weight: 800;text-align:left;">
+                              <td colspan="3" style="padding-bottom: 40px;" >GTE Docs. Credit Invoice(ver.<span t-field="o.invoice_date"/>)</td>
+                            </tr>
+                        </t>
+                </t>
+                <t t-if="o.type == 'out_refund'">
+                    <tr style="color:white;background-color:black;font-size: 13px;font-weight: 800;text-align:left;">
+                        <td colspan="3" style="padding-bottom: 40px;" >GTE Docs. Credit Note(ver.<span t-field="o.invoice_date"/>)</td>
+                    </tr>
+                </t>
+                <t t-if="o.type == 'in_refund'">
+                        <tr style="color:white;background-color:black;font-size: 13px;font-weight: 800;text-align:left;">
+                        <td colspan="3" style="padding-bottom: 40px;" >GTE Docs. Debit Note(ver.<span t-field="o.invoice_date"/>)</td>
+                    </tr>
+                </t>
+            </table>
+        </div>
+    </template>
+
+</odoo>

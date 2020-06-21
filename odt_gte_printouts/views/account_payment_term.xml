@@ -1,0 +1,16 @@
+<odoo>
+     <record id="account_payment_term_inherited_form" model="ir.ui.view">
+            <field name="name">account.payment.term.inherited.form</field>
+            <field name="model">account.payment.term</field>
+            <field name="inherit_id" ref="account.view_payment_term_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group" position='after'>
+
+                        <group>
+                            <field name="payment_term_arabic" string="Payment Terms" placeholder="arabic..."/>
+                        </group>
+
+                </xpath>
+            </field>
+     </record>
+</odoo>
