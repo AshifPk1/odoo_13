@@ -1,0 +1,55 @@
+<odoo>
+
+    <record id='view_partner_form_wedd_inherit' model='ir.ui.view'>
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div class="oe_button_box" position="inside">
+                <button 
+                    name="check_number_whatsapp"
+                    type="object"
+                    class="oe_stat_button"
+                    string="Check Whatsapp No"
+                    icon="fa-whatsapp"/>
+            </div>
+            <field name="mobile" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+            <field name="website" position="before">
+                <field name="is_whatsapp_number" readonly="1"/>
+                <field name="chat_id" readonly="1"/>
+            </field>
+            <field name="country_id" position="attributes">
+                <attribute name="required">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_tree_wedd_inherit" model="ir.ui.view">
+        <field name="name">res.partner.tree</field>
+        <field name="model">res.partner</field>
+        <field eval="8" name="priority"/>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="phone" position="before">
+                <field name="mobile"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="contacts.action_contacts_view_kanban" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="base.res_partner_kanban_view"/>
+        <field name="act_window_id" ref="contacts.action_contacts"/>
+    </record>
+
+    <record id="contacts.action_contacts_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="0"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="base.view_partner_tree"/>
+        <field name="act_window_id" ref="contacts.action_contacts"/>
+    </record>
+
+</odoo>

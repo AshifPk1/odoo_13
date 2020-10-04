@@ -1,0 +1,55 @@
+<odoo>
+
+    <record id="whatsapp_message_log_tree_view" model="ir.ui.view">
+        <field name="name">whatsapp.message.log.tree.view</field>
+        <field name="model">whatsapp.message.log</field>
+        <field name="arch" type="xml">
+            <tree string="Whatsapp Error Log" create="0" edit="0" delete="0">
+                <field name="name"/>
+                <field name="msg_date"/>
+                <field name="user_id"/>
+                <field name="message" invisible="1"/>
+                <field name="message_body"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="whatsapp_message_log_search" model="ir.ui.view">
+        <field name="name">whatsapp.message.log.search</field>
+        <field name="model">whatsapp.message.log</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="name"/>
+                <field name="status"/>
+                <filter string="Failed" name="status_error" domain="[('status','=','error')]" />
+                <filter string="Send" name="status" domain="[('status','=','send')]" />
+                <filter string="Contact" name="name" context="{'group_by':'name'}"/>
+                <filter string="Status" name="status" context="{'group_by' : 'status'}" />
+            </search>
+        </field>
+    </record>
+
+    <record id="whatsapp_message_log_action" model="ir.actions.act_window">
+        <field name="name">Whatsapp Message Log</field>
+        <field name="res_model">whatsapp.message.log</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'search_default_status_error': 1}</field>
+        <field name="view_id" ref="whatsapp_message_log_tree_view"/>
+    </record>
+
+    <menuitem id="menu_whatsapp_parent"
+              name="Whatsapp"
+              parent="contacts.menu_contacts"
+              sequence="2"
+              />
+
+    <menuitem id="menu_whatsapp_msg_log"
+              name="Whatsapp Message Log"
+              action="whatsapp_message_log_action"
+              parent="menu_whatsapp_parent"
+              sequence="2"
+              />
+
+</odoo>

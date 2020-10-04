@@ -1,0 +1,1245 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* muk_rest
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20190128\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-26 22:27+0000\n"
+"PO-Revision-Date: 2019-02-26 22:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>Warning</code>: Warning Exception to use with <code>raise</code>"
+msgstr "<code>Advertencia</code>: Excepción de Advertencia para usar con <code>aumento</code>"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>active_id</code>, <code>record</code>: Odoo Record that was given to the endpoint. May be be void"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>active_ids</code>, <code>records</code>: Odoo Records that were given to the endpoint. May be be void"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>b64encode</code>, <code>b64decode</code>: Base64 converter to encode and decode binary data"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>date_format</code>, <code>datetime_format</code>: server date and time formats"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>env</code>: Odoo Environment on which the rule is triggered"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>json</code>,<code>time</code>, <code>datetime</code>, <code>dateutil</code>, <code>timezone</code>: useful Python libraries"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>logger.info(message)</code>: Python logging framework"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>model</code>: Odoo Model of the record on which the rule is triggered"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>params</code>: HTTP parameters with which the endpoint was called."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "<code>uid</code>, <code>user</code>: User on which the rule is triggered"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "<i class=\"fa fa-lock\"/> Ressources"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+msgid "<span class=\"align-middle\">Powered by <strong>MuK IT</strong></span>"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "<span class=\"o_label\">Active Sessions</span>"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+msgid "API Logo"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_access
+msgid "Access Control"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__rules
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__rules
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__rules
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Access Rules"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_token_form
+msgid "Access Token"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_access_token
+msgid "Access Token are used to authenticate a user with the server."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.menu_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_token_tree
+msgid "Access Tokens"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_access
+msgid "Access rules are used to restrict Restful API configurations."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "Action"
+msgstr "Acción"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__action
+msgid "Action that is called by the endpoint."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__active
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__active
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__active
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__active
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__active
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+msgid "Active"
+msgstr "Activo"
+
+#. module: muk_rest
+#: selection:muk_rest.oauth,security:0
+msgid "Advanced Access Control"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "All"
+msgstr "Todos"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "All resources to which the user has access are accessible\n"
+"				        		via the Restful interface."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth1
+msgid "An OAuth1 setting can be used to connect to the system via the Restful API."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth2
+msgid "An OAuth2 setting can be used to connect to the system via the Restful API."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Archive"
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/tools/common.py:146
+#, python-format
+msgid "Authentication via OAuth is not supported!"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_authorization_code_form
+#: selection:muk_rest.oauth2,state:0
+msgid "Authorization Code"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_authorization_code
+#: model:ir.ui.menu,name:muk_rest.menu_rest_authorization_code
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_authorization_code_tree
+msgid "Authorization Codes"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_authorization_code
+msgid "Authorization Codes are used to authenticate a user with the server."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_error
+msgid "Authorization Error"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Authorize"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Available resources"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__meta_oauth
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__meta_oauth
+msgid "Base Configuration"
+msgstr ""
+
+#. module: muk_rest
+#: selection:muk_rest.oauth,security:0
+msgid "Basic Access Control"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_bearer_token_form
+msgid "Bearer Token"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_bearer_token
+msgid "Bearer Token are used to authenticate a user with the server."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.menu_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_bearer_token_tree
+msgid "Bearer Tokens"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_callback
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__callback
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__callback
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_callback_form
+msgid "Callback"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__url
+msgid "Callback URL"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__callbacks
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__callbacks
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__callbacks
+msgid "Callback URLs"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_callback
+#: model:ir.ui.menu,name:muk_rest.menu_rest_callback
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_callback_tree
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Callbacks"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: muk_rest
+#: selection:muk_rest.oauth2,state:0
+msgid "Client Credentials"
+msgstr ""
+
+#. module: muk_rest
+#: sql_constraint:muk_rest.oauth2:0
+msgid "Client ID must be unique."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__client_id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__client_key
+msgid "Client Key"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__client_secret
+msgid "Client Secret"
+msgstr ""
+
+#. module: muk_rest
+#: sql_constraint:muk_rest.oauth2:0
+msgid "Client Secret must be unique."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__code
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__code
+msgid "Code"
+msgstr "Código"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Code Settings"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__color
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__color
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__color
+msgid "Color"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__company
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__company
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__company
+msgid "Company"
+msgstr "Compañía"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__oauth
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__oauth
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__oauth
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__oauth
+#: model:ir.ui.menu,name:muk_rest.cat_menu_rest_configuration
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_tree
+msgid "Configurations"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__consumer_key
+msgid "Consumer Key"
+msgstr ""
+
+#. module: muk_rest
+#: sql_constraint:muk_rest.oauth1:0
+msgid "Consumer Key must be unique."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__consumer_secret
+msgid "Consumer Secret"
+msgstr ""
+
+#. module: muk_rest
+#: sql_constraint:muk_rest.oauth1:0
+msgid "Consumer Secret must be unique."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__perm_create
+msgid "Create Access"
+msgstr "Acceso para crear"
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_access
+msgid "Create a new Configuration Access Rules"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_callback
+msgid "Create a new Configuration Callbacks"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_endpoint
+msgid "Create a new Custom Restful Endpoints"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth1
+msgid "Create a new OAuth1 setting"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_oauth_on_create
+msgid "Create a new OAuth2 Setting"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth2
+msgid "Create a new OAuth2 setting"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__create_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__create_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__endpoint
+msgid "Custom Endpoint"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_endpoint
+msgid "Custom Restful Endpoint"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_endpoint
+msgid "Custom endpoints can be used to customize the API to your needs."
+msgstr ""
+
+#. module: muk_rest
+#: selection:muk_rest.endpoint,method:0
+msgid "DELETE"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_oauth
+#: model:ir.ui.menu,name:muk_rest.menu_rest_oauth
+msgid "Dashboard"
+msgstr "Tablero"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__default_callback
+msgid "Default Callback"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_oauth1__security
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_oauth2__security
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_oauth__security
+msgid "Defines the security settings to be used by the Restful API\n"
+"- Basic uses the user's security clearance to check requests from the API.\n"
+"- Advanced uses other rules in addition to the user security clearance, to further restrict the access.\n"
+""
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__perm_unlink
+msgid "Delete Access"
+msgstr "Permiso para eliminar"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__description
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__description
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__display_name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.cat_menu_rest_documentation
+msgid "Documentation"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__domain
+msgid "Domain"
+msgstr "Dominio"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__domain_fields
+msgid "Domain Field that will be automatically read after the search."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Domain Fields"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Domain Settings"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__domain
+msgid "Domain that is called by the endpoint."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Dropdown menu"
+msgstr "Menú desplegable"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Endpoint"
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:328
+#, python-format
+msgid "Endpoint validation has failed!"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_url,name:muk_rest.action_rest_endpoints
+#: model:ir.actions.act_window,name:muk_rest.action_rest_endpoint
+#: model:ir.ui.menu,name:muk_rest.menu_rest_endpoint
+#: model:ir.ui.menu,name:muk_rest.menu_rest_endpoints
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_tree
+msgid "Endpoints"
+msgstr ""
+
+#. module: muk_rest
+#: selection:muk_rest.endpoint,state:0
+msgid "Evaluate Domain"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_url,name:muk_rest.action_rest_examples
+#: model:ir.ui.menu,name:muk_rest.menu_rest_examples
+msgid "Examples"
+msgstr ""
+
+#. module: muk_rest
+#: selection:muk_rest.endpoint,state:0
+msgid "Execute Python Code"
+msgstr ""
+
+#. module: muk_rest
+#: selection:muk_rest.endpoint,state:0
+msgid "Execute a Server Action"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+msgid "Expired"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__expires_in
+msgid "Expires_in"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__domain_fields
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Fields"
+msgstr "Campos"
+
+#. module: muk_rest
+#: selection:muk_rest.endpoint,method:0
+msgid "GET"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_oauth2_search
+msgid "Grant Type"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_authorization_code
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_request_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__method
+msgid "HTTP Method"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Help"
+msgstr "Ayuda"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Help with Python expressions"
+msgstr "Ayuda con expresiones Python"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+msgid "Homepage"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__homepage
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__homepage
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__homepage
+msgid "Homepage URL"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__id
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__id
+msgid "ID"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__perm_create
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__perm_read
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__perm_unlink
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__perm_write
+msgid "If a client with advanced security is used, this setting can restrict access to the endpoint."
+msgstr ""
+
+#. module: muk_rest
+#: selection:muk_rest.oauth2,state:0
+msgid "Implicit"
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/endpoint.py:295
+#, python-format
+msgid "Import Template for Custom Endpoints"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "Inactive"
+msgstr "Inactivo"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Information"
+msgstr "Información"
+
+#. module: muk_rest
+#: code:addons/muk_rest/controllers/database.py:96
+#: code:addons/muk_rest/controllers/database.py:108
+#, python-format
+msgid "Invalid database name."
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/controllers/authentication.py:161
+#: code:addons/muk_rest/controllers/authentication.py:226
+#, python-format
+msgid "Invalid login or password!"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request____last_update
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__write_uid
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__write_date
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+msgid "Logo"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_res_users_form_preferences
+msgid "Manage your OAuth1 Sessions"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_res_users_form_preferences
+msgid "Manage your OAuth2 Sessions"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "Meta Data"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__model
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__model
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_search
+msgid "Model"
+msgstr "Modelo"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__model_name
+msgid "Model Name"
+msgstr "Nombre del modelo"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__name
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: muk_rest
+#: code:addons/muk_rest/exceptions/common.py:48
+#, python-format
+msgid "No database could be matched to the request."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__nonce
+msgid "Nonce"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__oauth
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_authorization_code
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_request_token
+msgid "OAuth"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_oauth
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__oauth
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_callback__oauth
+msgid "OAuth Configuration"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "OAuth Logo"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_res_users_form_preferences
+msgid "OAuth Sessions"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__state
+msgid "OAuth Type"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_oauth1
+#: model:ir.ui.menu,name:muk_rest.menu_rest_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_res_users_form
+msgid "OAuth1"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_access_token
+msgid "OAuth1 Access Token"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_oauth1
+msgid "OAuth1 Configuration"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_request_token
+msgid "OAuth1 Request Token"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_request
+msgid "OAuth1 Restful API Requests"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_res_users__oauth1_sessions
+msgid "OAuth1 Sessions"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_oauth
+msgid "OAuth1 setting"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_oauth2
+#: model:ir.ui.menu,name:muk_rest.menu_rest_oauth2
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_res_users_form
+msgid "OAuth2"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_access_token
+msgid "OAuth2 Access Token"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_authorization_code
+#: model:ir.model,name:muk_rest.model_muk_rest_authorization_code
+msgid "OAuth2 Authorization Code"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_bearer_token
+#: model:ir.model,name:muk_rest.model_muk_rest_bearer_token
+msgid "OAuth2 Bearer Token"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_oauth2
+msgid "OAuth2 Configuration"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_request_token
+msgid "OAuth2 Request Token"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_res_users__oauth2_sessions
+msgid "OAuth2 Sessions"
+msgstr ""
+
+#. module: muk_rest
+#: selection:muk_rest.endpoint,method:0
+msgid "POST"
+msgstr ""
+
+#. module: muk_rest
+#: selection:muk_rest.endpoint,method:0
+msgid "PUT"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: muk_rest
+#: selection:muk_rest.oauth2,state:0
+msgid "Password Credentials"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Privacy policy"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__privacy_policy
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__privacy_policy
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__privacy_policy
+msgid "Privacy policy URL"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__logo_url
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__logo_url
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__logo_url
+msgid "Product logo URL"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_callback
+msgid "Protect the Restful API from requests from unknown sources."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__code
+msgid "Python code that is called by the endpoint."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__perm_read
+msgid "Read Access"
+msgstr "Permiso para leer"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__refresh_token
+msgid "Refresh"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_muk_rest_request
+msgid "Request"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_request_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_request_token_form
+msgid "Request Token"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_request_token
+msgid "Request Token are used to authenticate a user with the server."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.menu_rest_request_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_request_token_tree
+msgid "Request Tokens"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_request
+#: model:ir.ui.menu,name:muk_rest.menu_rest_request
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_request_tree
+msgid "Requests"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.actions.act_window,help:muk_rest.action_rest_request
+msgid "Requests made to the Restful API."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__perm_create
+msgid "Requires Create"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__perm_unlink
+msgid "Requires Delete"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__perm_read
+msgid "Requires Read"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__perm_write
+msgid "Requires Write"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.main_menu_rest
+msgid "Restful API"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__route
+msgid "Restful Endpoint"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Restore"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_form
+msgid "Rule"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.actions.act_window,name:muk_rest.action_rest_access
+#: model:ir.ui.menu,name:muk_rest.menu_rest_access
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_tree
+msgid "Rules"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__security
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__security
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__security
+msgid "Security"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__action
+msgid "Server Actions"
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth.py:144
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__sessions
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__sessions
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__sessions
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+#, python-format
+msgid "Sessions"
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth.py:120
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+#, python-format
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__state
+msgid "State"
+msgstr "Estado"
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.cat_menu_rest_technical
+msgid "Technical"
+msgstr "Técnico"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_kanban
+msgid "Terms of service"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth1__service_terms
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__service_terms
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth__service_terms
+msgid "Terms of service URL"
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/tools/common.py:133
+#, python-format
+msgid "The Restful API is not supported by this database."
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth1
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_oauth2
+msgid "The available resources have been restricted. The following\n"
+"						    	models can be accessed via the Restful interface:"
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth1.py:85
+#, python-format
+msgid "The consumer key must be between 20 and 50 characters long."
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/models/oauth1.py:91
+#, python-format
+msgid "The consumer secret must be between 20 and 50 characters long."
+msgstr ""
+
+#. module: muk_rest
+#: code:addons/muk_rest/exceptions/common.py:53
+#: code:addons/muk_rest/exceptions/common.py:58
+#, python-format
+msgid "The request is not supported by this database."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__timestamp
+msgid "Timestamp"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "To return a result, assign <code>result = {...}</code>"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__resource_owner_key
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__access_token
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request__token
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__resource_owner_key
+msgid "Token"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__resource_owner_secret
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__resource_owner_secret
+msgid "Token Secret"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.ui.menu,name:muk_rest.cat_menu_rest_tokens
+msgid "Tokens"
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_endpoint__state
+msgid "Type"
+msgstr "Tipo"
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__state
+msgid "Type of the endpoint. The following values are available:\n"
+"- Evaluate Domain: A domain that is evaluated on the model.\n"
+"- Execute a Server Action: A server action that is run.\n"
+"- Execute Python Code: A block of Python code that will be executed.\n"
+""
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access_token__user
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_authorization_code__user
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_bearer_token__user
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_oauth2__user
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__user
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_access_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_authorization_code
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_bearer_token
+#: model_terms:ir.ui.view,arch_db:muk_rest.search_rest_request_token
+msgid "User"
+msgstr "Usuario"
+
+#. module: muk_rest
+#: model:ir.model,name:muk_rest.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "Various fields may use Python code or Python expressions. The following variables can be used:"
+msgstr "Varios campos pueden usar código Python o expresiones Python. Se pueden usar las siguientes variables:"
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_request_token__verifier
+msgid "Verifier"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.authorize_error
+msgid "We're sorry, but something unexpected happened.."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,help:muk_rest.field_muk_rest_endpoint__active
+msgid "When unchecked, the endpoint is hidden and will not be available through the API."
+msgstr ""
+
+#. module: muk_rest
+#: model:ir.model.fields,field_description:muk_rest.field_muk_rest_access__perm_write
+msgid "Write Access"
+msgstr "Permiso de escritura"
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "e.g. Action Endpoint"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_access_form
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "e.g. MyApp"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_endpoint_form
+msgid "e.g. namespace/name"
+msgstr ""
+
+#. module: muk_rest
+#: model_terms:ir.ui.view,arch_db:muk_rest.view_rest_oauth_form
+msgid "http://www.example.com"
+msgstr ""
+

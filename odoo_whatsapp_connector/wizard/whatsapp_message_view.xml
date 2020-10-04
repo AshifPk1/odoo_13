@@ -1,0 +1,49 @@
+<odoo>
+
+    <record id="whatsapp_message_view" model="ir.ui.view">
+        <field name="name">whatsapp.message.form</field>
+        <field name="model">whatsapp.message</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <form string="Whatsapp Message">
+                <group>
+                    <field name="partner_ids" widget="many2many_tags" required="1" domain="[('is_whatsapp_number','=', True)]"/>
+                </group>
+                <group>
+                    <field name="message_type" widget="radio" options="{'horizontal': true}"/>
+                </group>
+                <group attrs="{'invisible' : [('message_type', '!=', 'url_link')]}">
+                    <field name="title" attrs="{'required' : [('message_type', '=', 'url_link')]}"/>
+                    <field name="link" widget="url" attrs="{'required' : [('message_type', '=', 'url_link')]}"/>
+                </group>
+                <group>
+                    <field name="message" attrs="{'required' : [('message_type', 'in', ('text', 'url_link'))]}"/>
+                </group>
+                <group>
+                    <field name="attachment" filename="filename" attrs="{'invisible' : [('message_type', '=', 'text')],'required' : [('message_type', 'in', ('media', 'url_link'))]}"/>
+                    <field name="filename" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="send_whatsapp_message" string="Send" icon="fa-paper-plane" type="object" class="oe_highlight"/>
+                    <button name="cancel" string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_whatsapp_message" model="ir.actions.act_window">
+        <field name="name">Whatsapp Message</field>
+        <field name="res_model">whatsapp.message</field>
+        <field name="binding_view_types">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="whatsapp_menu" 
+        name="Whatsapp"
+        parent="odoo_whatsapp_connector.menu_whatsapp_parent"
+        action="action_whatsapp_message"
+        sequence="1"
+        />
+
+</odoo>
